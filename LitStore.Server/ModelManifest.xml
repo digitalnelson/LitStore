@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <ModelDocumentManifest xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Documents>
-    <Document FullPath="C:\Users\Brent\Documents\GitHub\LitStore\LitStore.Server\DataSources\ApplicationData\Articles.lsml" Checksum="B6D5684A439A17850195824EC22E409B2A05A8CADE982EC67ED0F84936DCADC5" />
+    <Document FullPath="C:\Users\Brent\Documents\GitHub\LitStore\LitStore.Server\DataSources\ApplicationData\Articles.lsml" Checksum="DE9A5F962058BB309683E7CDA3511EAA4A5C5ACBDCD0733E573EC160405C5C68" />
     <Document FullPath="C:\Users\Brent\Documents\GitHub\LitStore\LitStore.Server\DataSources\ApplicationData\ArticleTypes.lsml" Checksum="7689D7F4467D23A99D036BD4916397F44087AD2868BB2C46FB5DBC2CEAD92A15" />
     <Document FullPath="C:\Users\Brent\Documents\GitHub\LitStore\LitStore.Server\DataSources\ApplicationData\Authors.lsml" Checksum="64D8A4D486BD20F0833DC31CAEB264C113A060148DEFB48BD3C2FD769BC2BAC1" />
     <Document FullPath="C:\Users\Brent\Documents\GitHub\LitStore\LitStore.Server\DataSources\ApplicationData\Results.lsml" Checksum="6092E8AD850AAE0F1AFBAAB91CBE30C6A2D9040F7F80789972A01FBA1A4D1377" />

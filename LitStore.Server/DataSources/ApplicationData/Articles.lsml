@@ -27,6 +27,15 @@
         </KeyProperty.Attributes>
       </KeyProperty>
       <EntityProperty
+        Name="PMID"
+        PropertyType=":String">
+        <EntityProperty.Attributes>
+          <Required />
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
         Name="Title"
         PropertyType=":String">
         <EntityProperty.Attributes>

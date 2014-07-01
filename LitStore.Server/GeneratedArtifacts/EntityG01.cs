@@ -107,6 +107,30 @@ namespace LightSwitchApplication
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "12.1.0.0")]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public string PMID
+        {
+            get
+            {
+                return global::LightSwitchApplication.Article.DetailsClass.GetValue(this, global::LightSwitchApplication.Article.DetailsClass.PropertySetProperties.PMID);
+            }
+            set
+            {
+                global::LightSwitchApplication.Article.DetailsClass.SetValue(this, global::LightSwitchApplication.Article.DetailsClass.PropertySetProperties.PMID, value);
+            }
+        }
+        
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void PMID_IsReadOnly(ref bool result);
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void PMID_Validate(global::Microsoft.LightSwitch.EntityValidationResultsBuilder results);
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void PMID_Changed();
+
+        /// <summary>
+        /// No Modeled Description Available
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "12.1.0.0")]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         public string Title
         {
             get
@@ -431,6 +455,14 @@ namespace LightSwitchApplication
                     }
                 }
                 
+                public global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.Article, global::LightSwitchApplication.Article.DetailsClass, string> PMID
+                {
+                    get
+                    {
+                        return base.GetItem(global::LightSwitchApplication.Article.DetailsClass.PropertySetProperties.PMID) as global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.Article, global::LightSwitchApplication.Article.DetailsClass, string>;
+                    }
+                }
+                
                 public global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.Article, global::LightSwitchApplication.Article.DetailsClass, string> Title
                 {
                     get
@@ -518,6 +550,7 @@ namespace LightSwitchApplication
             public interface IImplementation : global::Microsoft.LightSwitch.Internal.IEntityImplementation
             {
                 new int Id { get; set; }
+                new string PMID { get; set; }
                 new string Title { get; set; }
                 new int SampleSize { get; set; }
                 new string CreatedBy { get; }
@@ -572,6 +605,43 @@ namespace LightSwitchApplication
                 private static void _Id_OnValueChanged(global::LightSwitchApplication.Article e)
                 {
                     e.Id_Changed();
+                }
+    
+                [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+                public static readonly global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.Article, global::LightSwitchApplication.Article.DetailsClass, string>.Entry
+                    PMID = new global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.Article, global::LightSwitchApplication.Article.DetailsClass, string>.Entry(
+                        "PMID",
+                        global::LightSwitchApplication.Article.DetailsClass.PropertySetProperties._PMID_Stub,
+                        global::LightSwitchApplication.Article.DetailsClass.PropertySetProperties._PMID_ComputeIsReadOnly,
+                        global::LightSwitchApplication.Article.DetailsClass.PropertySetProperties._PMID_Validate,
+                        global::LightSwitchApplication.Article.DetailsClass.PropertySetProperties._PMID_GetImplementationValue,
+                        global::LightSwitchApplication.Article.DetailsClass.PropertySetProperties._PMID_SetImplementationValue,
+                        global::LightSwitchApplication.Article.DetailsClass.PropertySetProperties._PMID_OnValueChanged);
+                private static void _PMID_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.Article.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.Article, global::LightSwitchApplication.Article.DetailsClass, string>.Data> c, global::LightSwitchApplication.Article.DetailsClass d, object sf)
+                {
+                    c(d, ref d._PMID, sf);
+                }
+                private static bool _PMID_ComputeIsReadOnly(global::LightSwitchApplication.Article e)
+                {
+                    bool result = false;
+                    e.PMID_IsReadOnly(ref result);
+                    return result;
+                }
+                private static void _PMID_Validate(global::LightSwitchApplication.Article e, global::Microsoft.LightSwitch.EntityValidationResultsBuilder r)
+                {
+                    e.PMID_Validate(r);
+                }
+                private static string _PMID_GetImplementationValue(global::LightSwitchApplication.Article.DetailsClass d)
+                {
+                    return d.ImplementationEntity.PMID;
+                }
+                private static void _PMID_SetImplementationValue(global::LightSwitchApplication.Article.DetailsClass d, string v)
+                {
+                    d.ImplementationEntity.PMID = v;
+                }
+                private static void _PMID_OnValueChanged(global::LightSwitchApplication.Article e)
+                {
+                    e.PMID_Changed();
                 }
     
                 [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
@@ -908,6 +978,9 @@ namespace LightSwitchApplication
     
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
             private global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.Article, global::LightSwitchApplication.Article.DetailsClass, int>.Data _Id;
+            
+            [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+            private global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.Article, global::LightSwitchApplication.Article.DetailsClass, string>.Data _PMID;
             
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
             private global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.Article, global::LightSwitchApplication.Article.DetailsClass, string>.Data _Title;

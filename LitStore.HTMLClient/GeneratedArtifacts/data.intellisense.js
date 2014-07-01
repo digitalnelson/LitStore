@@ -10,14 +10,6 @@
         created: [lightSwitchApplication.Article]
     });
 
-    msls._addEntryPoints(lightSwitchApplication.ArticleType, {
-        /// <field>
-        /// Called when a new articleType is created.
-        /// <br/>created(msls.application.ArticleType entity)
-        /// </field>
-        created: [lightSwitchApplication.ArticleType]
-    });
-
     msls._addEntryPoints(lightSwitchApplication.Author, {
         /// <field>
         /// Called when a new author is created.
@@ -32,6 +24,14 @@
         /// <br/>created(msls.application.Result entity)
         /// </field>
         created: [lightSwitchApplication.Result]
+    });
+
+    msls._addEntryPoints(lightSwitchApplication.ArticleType, {
+        /// <field>
+        /// Called when a new articleType is created.
+        /// <br/>created(msls.application.ArticleType entity)
+        /// </field>
+        created: [lightSwitchApplication.ArticleType]
     });
 
 }(msls.application));

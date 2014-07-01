@@ -5,6 +5,7 @@
       <EntityTypeMapping TypeName="IsTypeOf(LightSwitchApplication.Article)">
         <MappingFragment StoreEntitySet="Articles">
           <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="PMID" ColumnName="PMID" />
           <ScalarProperty Name="Title" ColumnName="Title" />
           <ScalarProperty Name="SampleSize" ColumnName="SampleSize" />
           <ScalarProperty Name="Article_ArticleType" ColumnName="Article_ArticleType" />

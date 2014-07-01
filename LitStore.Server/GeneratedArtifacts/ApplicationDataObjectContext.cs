@@ -192,14 +192,16 @@ namespace LightSwitchApplication.Implementation
         /// Create a new Article object.
         /// </summary>
         /// <param name="id">Initial value of the Id property.</param>
+        /// <param name="pMID">Initial value of the PMID property.</param>
         /// <param name="title">Initial value of the Title property.</param>
         /// <param name="sampleSize">Initial value of the SampleSize property.</param>
         /// <param name="article_ArticleType">Initial value of the Article_ArticleType property.</param>
         /// <param name="rowVersion">Initial value of the RowVersion property.</param>
-        public static Article CreateArticle(global::System.Int32 id, global::System.String title, global::System.Int32 sampleSize, global::System.Int32 article_ArticleType, global::System.Byte[] rowVersion)
+        public static Article CreateArticle(global::System.Int32 id, global::System.String pMID, global::System.String title, global::System.Int32 sampleSize, global::System.Int32 article_ArticleType, global::System.Byte[] rowVersion)
         {
             Article article = new Article();
             article.Id = id;
+            article.PMID = pMID;
             article.Title = title;
             article.SampleSize = sampleSize;
             article.Article_ArticleType = article_ArticleType;
@@ -237,6 +239,30 @@ namespace LightSwitchApplication.Implementation
         private global::System.Int32 _Id;
         partial void OnIdChanging(global::System.Int32 value);
         partial void OnIdChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String PMID
+        {
+            get
+            {
+                return _PMID;
+            }
+            set
+            {
+                OnPMIDChanging(value);
+                ReportPropertyChanging("PMID");
+                _PMID = value;
+                ReportPropertyChanged("PMID");
+                OnPMIDChanged();
+            }
+        }
+        private global::System.String _PMID;
+        partial void OnPMIDChanging(global::System.String value);
+        partial void OnPMIDChanged();
     
         /// <summary>
         /// No Metadata Documentation available.

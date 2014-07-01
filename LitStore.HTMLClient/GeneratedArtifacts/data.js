@@ -23,6 +23,9 @@ window.myapp = msls.application;
         /// <field name="Id" type="Number">
         /// Gets or sets the id for this article.
         /// </field>
+        /// <field name="PMID" type="String">
+        /// Gets or sets the pMID for this article.
+        /// </field>
         /// <field name="Title" type="String">
         /// Gets or sets the title for this article.
         /// </field>
@@ -55,43 +58,6 @@ window.myapp = msls.application;
         /// </field>
         /// <field name="details" type="msls.application.Article.Details">
         /// Gets the details for this article.
-        /// </field>
-        $Entity.call(this, entitySet);
-    }
-
-    function ArticleType(entitySet) {
-        /// <summary>
-        /// Represents the ArticleType entity type.
-        /// </summary>
-        /// <param name="entitySet" type="msls.EntitySet" optional="true">
-        /// The entity set that should contain this articleType.
-        /// </param>
-        /// <field name="Id" type="Number">
-        /// Gets or sets the id for this articleType.
-        /// </field>
-        /// <field name="Description" type="String">
-        /// Gets or sets the description for this articleType.
-        /// </field>
-        /// <field name="Articles" type="msls.EntityCollection" elementType="msls.application.Article">
-        /// Gets the articles for this articleType.
-        /// </field>
-        /// <field name="CreatedBy" type="String">
-        /// Gets or sets the createdBy for this articleType.
-        /// </field>
-        /// <field name="Created" type="Date">
-        /// Gets or sets the created for this articleType.
-        /// </field>
-        /// <field name="ModifiedBy" type="String">
-        /// Gets or sets the modifiedBy for this articleType.
-        /// </field>
-        /// <field name="Modified" type="Date">
-        /// Gets or sets the modified for this articleType.
-        /// </field>
-        /// <field name="RowVersion" type="Array">
-        /// Gets or sets the rowVersion for this articleType.
-        /// </field>
-        /// <field name="details" type="msls.application.ArticleType.Details">
-        /// Gets the details for this articleType.
         /// </field>
         $Entity.call(this, entitySet);
     }
@@ -164,6 +130,43 @@ window.myapp = msls.application;
         $Entity.call(this, entitySet);
     }
 
+    function ArticleType(entitySet) {
+        /// <summary>
+        /// Represents the ArticleType entity type.
+        /// </summary>
+        /// <param name="entitySet" type="msls.EntitySet" optional="true">
+        /// The entity set that should contain this articleType.
+        /// </param>
+        /// <field name="Id" type="Number">
+        /// Gets or sets the id for this articleType.
+        /// </field>
+        /// <field name="Description" type="String">
+        /// Gets or sets the description for this articleType.
+        /// </field>
+        /// <field name="Articles" type="msls.EntityCollection" elementType="msls.application.Article">
+        /// Gets the articles for this articleType.
+        /// </field>
+        /// <field name="CreatedBy" type="String">
+        /// Gets or sets the createdBy for this articleType.
+        /// </field>
+        /// <field name="Created" type="Date">
+        /// Gets or sets the created for this articleType.
+        /// </field>
+        /// <field name="ModifiedBy" type="String">
+        /// Gets or sets the modifiedBy for this articleType.
+        /// </field>
+        /// <field name="Modified" type="Date">
+        /// Gets or sets the modified for this articleType.
+        /// </field>
+        /// <field name="RowVersion" type="Array">
+        /// Gets or sets the rowVersion for this articleType.
+        /// </field>
+        /// <field name="details" type="msls.application.ArticleType.Details">
+        /// Gets the details for this articleType.
+        /// </field>
+        $Entity.call(this, entitySet);
+    }
+
     function ApplicationData(dataWorkspace) {
         /// <summary>
         /// Represents the ApplicationData data service.
@@ -174,14 +177,14 @@ window.myapp = msls.application;
         /// <field name="Articles" type="msls.EntitySet">
         /// Gets the Articles entity set.
         /// </field>
-        /// <field name="ArticleTypes" type="msls.EntitySet">
-        /// Gets the ArticleTypes entity set.
-        /// </field>
         /// <field name="Authors" type="msls.EntitySet">
         /// Gets the Authors entity set.
         /// </field>
         /// <field name="Results" type="msls.EntitySet">
         /// Gets the Results entity set.
+        /// </field>
+        /// <field name="ArticleTypes" type="msls.EntitySet">
+        /// Gets the ArticleTypes entity set.
         /// </field>
         /// <field name="details" type="msls.application.ApplicationData.Details">
         /// Gets the details for this data service.
@@ -205,22 +208,12 @@ window.myapp = msls.application;
 
         Article: $defineEntity(Article, [
             { name: "Id", type: Number },
+            { name: "PMID", type: String },
             { name: "Title", type: String },
             { name: "SampleSize", type: Number },
             { name: "Results", kind: "collection", elementType: Result },
             { name: "ArticleType", kind: "reference", type: ArticleType },
             { name: "Authors", kind: "collection", elementType: Author },
-            { name: "CreatedBy", type: String, isReadOnly: true },
-            { name: "Created", type: Date, isReadOnly: true },
-            { name: "ModifiedBy", type: String, isReadOnly: true },
-            { name: "Modified", type: Date, isReadOnly: true },
-            { name: "RowVersion", type: Array }
-        ]),
-
-        ArticleType: $defineEntity(ArticleType, [
-            { name: "Id", type: Number },
-            { name: "Description", type: String },
-            { name: "Articles", kind: "collection", elementType: Article },
             { name: "CreatedBy", type: String, isReadOnly: true },
             { name: "Created", type: Date, isReadOnly: true },
             { name: "ModifiedBy", type: String, isReadOnly: true },
@@ -248,23 +241,27 @@ window.myapp = msls.application;
             { name: "RowVersion", type: Array }
         ]),
 
+        ArticleType: $defineEntity(ArticleType, [
+            { name: "Id", type: Number },
+            { name: "Description", type: String },
+            { name: "Articles", kind: "collection", elementType: Article },
+            { name: "CreatedBy", type: String, isReadOnly: true },
+            { name: "Created", type: Date, isReadOnly: true },
+            { name: "ModifiedBy", type: String, isReadOnly: true },
+            { name: "Modified", type: Date, isReadOnly: true },
+            { name: "RowVersion", type: Array }
+        ]),
+
         ApplicationData: $defineDataService(ApplicationData, lightSwitchApplication.rootUri + "/ApplicationData.svc", [
             { name: "Articles", elementType: Article },
-            { name: "ArticleTypes", elementType: ArticleType },
             { name: "Authors", elementType: Author },
-            { name: "Results", elementType: Result }
+            { name: "Results", elementType: Result },
+            { name: "ArticleTypes", elementType: ArticleType }
         ], [
             {
                 name: "Articles_SingleOrDefault", value: function (Id) {
                     return new $DataServiceQuery({ _entitySet: this.Articles },
                         lightSwitchApplication.rootUri + "/ApplicationData.svc" + "/Articles(" + "Id=" + $toODataString(Id, "Int32?") + ")"
-                    );
-                }
-            },
-            {
-                name: "ArticleTypes_SingleOrDefault", value: function (Id) {
-                    return new $DataServiceQuery({ _entitySet: this.ArticleTypes },
-                        lightSwitchApplication.rootUri + "/ApplicationData.svc" + "/ArticleTypes(" + "Id=" + $toODataString(Id, "Int32?") + ")"
                     );
                 }
             },
@@ -279,6 +276,13 @@ window.myapp = msls.application;
                 name: "Results_SingleOrDefault", value: function (Id) {
                     return new $DataServiceQuery({ _entitySet: this.Results },
                         lightSwitchApplication.rootUri + "/ApplicationData.svc" + "/Results(" + "Id=" + $toODataString(Id, "Int32?") + ")"
+                    );
+                }
+            },
+            {
+                name: "ArticleTypes_SingleOrDefault", value: function (Id) {
+                    return new $DataServiceQuery({ _entitySet: this.ArticleTypes },
+                        lightSwitchApplication.rootUri + "/ApplicationData.svc" + "/ArticleTypes(" + "Id=" + $toODataString(Id, "Int32?") + ")"
                     );
                 }
             }

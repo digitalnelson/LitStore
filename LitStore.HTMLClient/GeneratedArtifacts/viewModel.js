@@ -179,6 +179,7 @@
         AddEditArticle: $defineScreen(AddEditArticle, [
             { name: "Article", kind: "local", type: lightSwitchApplication.Article }
         ], [
+            { name: "LookupPMID" }
         ]),
 
         BrowseArticles: $defineScreen(BrowseArticles, [

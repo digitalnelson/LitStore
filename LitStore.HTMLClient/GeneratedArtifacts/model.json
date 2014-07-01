@@ -2109,7 +2109,8 @@
           "__isSemanticType": 1,
           "id": "Microsoft.LightSwitch.Extensions:EmailAddress",
           "name": "EmailAddress",
-          "underlyingType": { "__id": ":String" }
+          "underlyingType": { "__id": ":String" },
+          "Microsoft.LightSwitch.Extensions:@EmailAddressValidation": { "domainRequired": true }
         },
         {
           "__isSemanticType": 1,
@@ -2127,13 +2128,15 @@
           "__isSemanticType": 1,
           "id": "Microsoft.LightSwitch.Extensions:PhoneNumber",
           "name": "PhoneNumber",
-          "underlyingType": { "__id": ":String" }
+          "underlyingType": { "__id": ":String" },
+          "Microsoft.LightSwitch.Extensions:@PhoneNumberValidation": { "formats": "C (AAA) NNN-NNNN;C (AAA) NNNNNNN;CAAANNNNNNN;(AAA) NNN-NNNN;(AAA) NNNNNNN;AAANNNNNNN;NNN-NNNN;NNNNNNN" }
         },
         {
           "__isSemanticType": 1,
           "id": "Microsoft.LightSwitch.Extensions:Percent",
           "name": "Percent",
           "underlyingType": { "__id": ":Decimal" },
+          "Microsoft.LightSwitch.Extensions:@FormatParameter": { "decimalDigits": 2 },
           ":@DecimalConstraint":
           {
             "scale": 9
@@ -2143,7 +2146,8 @@
           "__isSemanticType": 1,
           "id": "Microsoft.LightSwitch.Extensions:WebAddress",
           "name": "WebAddress",
-          "underlyingType": { "__id": ":String" }
+          "underlyingType": { "__id": ":String" },
+          "Microsoft.LightSwitch.Extensions:@WebAddressValidation": { }
         }
       ]
     },
@@ -2410,7 +2414,7 @@
         },
         {
           "__isEntityType": 1,
-          ":@SummaryProperty": { "property": { "__id": "Article/Properties[Title]" } },
+          ":@SummaryProperty": { "property": { "__id": "Article/Properties[PMID]" } },
           "id": "Article",
           "name": "Article",
           ":@CreatedModifiedPropertiesEnabled": { },
@@ -2447,6 +2451,16 @@
               "propertyType": { "__id": ":Int32" },
               ":@Required": { },
               ":@NotSearchable": { }
+            },
+            {
+              "id": "Article/Properties[PMID]",
+              "name": "PMID",
+              "propertyType": { "__id": ":String" },
+              ":@Required": { },
+              ":@MaxLength":
+              {
+                "value": 255
+              }
             },
             {
               "id": "Article/Properties[Title]",
@@ -3195,6 +3209,16 @@
                             "childContentItems":
                             [
                               {
+                                "displayName": "PMID",
+                                "name": "PMID",
+                                "kind": "Value",
+                                "view": { "__id": ":TextBox" },
+                                "dataSource":
+                                {
+                                  "member": { "__id": "Article/Properties[PMID]" }
+                                }
+                              },
+                              {
                                 "displayName": "Title",
                                 "name": "Title",
                                 "kind": "Value",
@@ -3272,6 +3296,29 @@
                           }
                         ]
                       }
+                    ],
+                    "commandItems":
+                    [
+                      {
+                        "displayName": "Lookup PMID",
+                        "name": "LookupPMID",
+                        "kind": "Command",
+                        "view": { "__id": ":CommandBarButton" },
+                        "propertySources":
+                        [
+                          {
+                            "property": { "__id": ":RootControl/Properties[Tap]" },
+                            "source":
+                            {
+                              "target": { "__id": "AddEditArticle/Methods[LookupPMID]" }
+                            }
+                          },
+                          {
+                            "property": { "__id": ":RootCommand/Properties[Icon]" },
+                            "value": "msls-search"
+                          }
+                        ]
+                      }
                     ]
                   }
                 ]
@@ -3320,6 +3367,10 @@
                   "parameterType": { "__id": ":String" }
                 }
               ]
+            },
+            {
+              "id": "AddEditArticle/Methods[LookupPMID]",
+              "name": "LookupPMID"
             }
           ],
           "properties":
@@ -3368,7 +3419,7 @@
                         "displayName": "Articles",
                         "name": "Articles",
                         "kind": "Collection",
-                        "view": { "__id": ":TileList" },
+                        "view": { "__id": ":Table" },
                         "dataSource":
                         {
                           "member": { "__id": "BrowseArticles/Properties[Articles]" }
@@ -3379,7 +3430,7 @@
                             "displayName": "rows",
                             "name": "rows",
                             "kind": "Details",
-                            "view": { "__id": ":RowsLayout" },
+                            "view": { "__id": ":TableRowLayout" },
                             "dataSource":
                             {
                               "links":
@@ -3388,6 +3439,16 @@
                             },
                             "childContentItems":
                             [
+                              {
+                                "displayName": "Created",
+                                "name": "Created",
+                                "kind": "Value",
+                                "view": { "__id": ":Text" },
+                                "dataSource":
+                                {
+                                  "member": { "__id": "Article/Properties[Created]" }
+                                }
+                              },
                               {
                                 "displayName": "Title",
                                 "name": "Title",
@@ -3402,6 +3463,10 @@
                                   {
                                     "property": { "__id": ":RootControl/Properties[FontStyle]" },
                                     "value": "Large"
+                                  },
+                                  {
+                                    "property": { "__id": ":ColumnsLayout/Properties[WeightedColumnWidth]" },
+                                    "value": 3
                                   }
                                 ]
                               },
@@ -5000,7 +5065,7 @@
                                     "view": { "__id": ":Text" },
                                     "dataSource":
                                     {
-                                      "member": { "__id": "Article/Properties[Title]" }
+                                      "member": { "__id": "Article/Properties[PMID]" }
                                     }
                                   }
                                 ]

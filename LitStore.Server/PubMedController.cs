@@ -10,6 +10,11 @@ using System.Xml;
 
 namespace LightSwitchApplication
 {
+    public class Art
+    {
+        public string Title { get; set; }
+    }
+
 	public class PubMedController : ApiController
 	{
 		// GET api/<controller>
@@ -19,27 +24,27 @@ namespace LightSwitchApplication
 		}
 
 		// GET api/<controller>/5
-		public async Task<HttpResponseMessage> Get(string id)
+		public async Task<Art> Get(string id)
 		{
-			HttpClient hc = new HttpClient();
-			string xml = await hc.GetStringAsync("http://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&id=" + id + "&retmode=xml&rettype=abstract");
+            HttpClient hc = new HttpClient();
+            string xml = await hc.GetStringAsync("http://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&id=" + id + "&retmode=xml&rettype=abstract");
 
-			XmlDocument doc = new XmlDocument();
-			doc.LoadXml(xml);
-			doc.RemoveChild(doc.DocumentType);
+            XmlDocument doc = new XmlDocument();
+            doc.LoadXml(xml);
+            //doc.RemoveChild(doc.DocumentType);
 
-			StringContent sc = new StringContent(Newtonsoft.Json.JsonConvert.SerializeXmlNode(doc));
-			sc.Headers.ContentType = new MediaTypeHeaderValue("application/json");
+            var title = doc.SelectSingleNode("PubmedArticleSet/PubmedArticle/MedlineCitation/Article/ArticleTitle");
 
-			HttpResponseMessage resp = new HttpResponseMessage();
-			resp.Content = sc;
+            Art art = new Art();
+            art.Title = title.InnerText;
 
-			return resp;
+            return art;
 		}
 
 		// POST api/<controller>
-		public void Post([FromBody]string value)
+		public string Post([FromBody]string value)
 		{
+            return "success";
 		}
 
 		// PUT api/<controller>/5

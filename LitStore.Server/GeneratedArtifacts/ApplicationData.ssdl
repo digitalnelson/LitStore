@@ -23,6 +23,7 @@
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="PMID" Type="nvarchar" Nullable="false" MaxLength="255" />
     <Property Name="Title" Type="nvarchar" Nullable="false" MaxLength="255" />
     <Property Name="SampleSize" Type="int" Nullable="false" />
     <Property Name="CreatedBy" Type="nvarchar" MaxLength="255" />

@@ -35,6 +35,14 @@
             data: lightSwitchApplication.Article,
             value: lightSwitchApplication.Article
         },
+        PMID: {
+            _$class: msls.ContentItem,
+            _$name: "PMID",
+            _$parentName: "left",
+            screen: lightSwitchApplication.AddEditArticle,
+            data: lightSwitchApplication.Article,
+            value: String
+        },
         Title: {
             _$class: msls.ContentItem,
             _$name: "Title",
@@ -95,6 +103,16 @@
         /// </field>
         beforeApplyChanges: [lightSwitchApplication.AddEditArticle],
         /// <field>
+        /// Called to determine if the LookupPMID method can be executed.
+        /// <br/>canExecute(msls.application.AddEditArticle screen)
+        /// </field>
+        LookupPMID_canExecute: [lightSwitchApplication.AddEditArticle],
+        /// <field>
+        /// Called to execute the LookupPMID method.
+        /// <br/>execute(msls.application.AddEditArticle screen)
+        /// </field>
+        LookupPMID_execute: [lightSwitchApplication.AddEditArticle],
+        /// <field>
         /// Called after the Details content item has been rendered.
         /// <br/>postRender(HTMLElement element, msls.ContentItem contentItem)
         /// </field>
@@ -109,6 +127,11 @@
         /// <br/>postRender(HTMLElement element, msls.ContentItem contentItem)
         /// </field>
         left_postRender: [$element, function () { return new lightSwitchApplication.AddEditArticle().findContentItem("left"); }],
+        /// <field>
+        /// Called after the PMID content item has been rendered.
+        /// <br/>postRender(HTMLElement element, msls.ContentItem contentItem)
+        /// </field>
+        PMID_postRender: [$element, function () { return new lightSwitchApplication.AddEditArticle().findContentItem("PMID"); }],
         /// <field>
         /// Called after the Title content item has been rendered.
         /// <br/>postRender(HTMLElement element, msls.ContentItem contentItem)
@@ -173,6 +196,14 @@
             data: lightSwitchApplication.Article,
             value: lightSwitchApplication.Article
         },
+        Created: {
+            _$class: msls.ContentItem,
+            _$name: "Created",
+            _$parentName: "rows",
+            screen: lightSwitchApplication.BrowseArticles,
+            data: lightSwitchApplication.Article,
+            value: Date
+        },
         Title: {
             _$class: msls.ContentItem,
             _$name: "Title",
@@ -231,6 +262,11 @@
         /// <br/>postRender(HTMLElement element, msls.ContentItem contentItem)
         /// </field>
         rows_postRender: [$element, function () { return new lightSwitchApplication.BrowseArticles().findContentItem("rows"); }],
+        /// <field>
+        /// Called after the Created content item has been rendered.
+        /// <br/>postRender(HTMLElement element, msls.ContentItem contentItem)
+        /// </field>
+        Created_postRender: [$element, function () { return new lightSwitchApplication.BrowseArticles().findContentItem("Created"); }],
         /// <field>
         /// Called after the Title content item has been rendered.
         /// <br/>postRender(HTMLElement element, msls.ContentItem contentItem)

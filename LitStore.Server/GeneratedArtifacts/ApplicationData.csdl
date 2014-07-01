@@ -5,6 +5,7 @@
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="Edm.Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PMID" Type="Edm.String" Nullable="false" MaxLength="255" />
     <Property Name="Title" Type="Edm.String" Nullable="false" MaxLength="255" />
     <Property Name="SampleSize" Type="Edm.Int32" Nullable="false" />
     <Property Name="Article_ArticleType" Type="Edm.Int32" Nullable="false" />
