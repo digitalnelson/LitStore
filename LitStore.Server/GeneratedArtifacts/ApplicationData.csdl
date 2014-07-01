@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" Namespace="LightSwitchApplication" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityType Name="Article">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Edm.Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Title" Type="Edm.String" Nullable="false" MaxLength="255" />
+    <Property Name="SampleSize" Type="Edm.Int32" Nullable="false" />
+    <Property Name="Article_ArticleType" Type="Edm.Int32" Nullable="false" />
+    <Property Name="CreatedBy" Type="Edm.String" MaxLength="255" />
+    <Property Name="Created" Type="Edm.DateTimeOffset" />
+    <Property Name="ModifiedBy" Type="Edm.String" MaxLength="255" />
+    <Property Name="Modified" Type="Edm.DateTimeOffset" />
+    <Property Name="RowVersion" Type="Edm.Binary" Nullable="false" ConcurrencyMode="Fixed" annotation:StoreGeneratedPattern="Computed" />
+    <NavigationProperty Name="Results" Relationship="LightSwitchApplication.Result_Article" ToRole="Result" FromRole="Article" />
+    <NavigationProperty Name="ArticleType" Relationship="LightSwitchApplication.Article_ArticleType" ToRole="ArticleType" FromRole="Article" />
+    <NavigationProperty Name="Authors" Relationship="LightSwitchApplication.Article_Author" ToRole="Author" FromRole="Article" />
+  </EntityType>
+  <EntityType Name="ArticleType">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Edm.Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Description" Type="Edm.String" Nullable="false" MaxLength="255" />
+    <Property Name="CreatedBy" Type="Edm.String" MaxLength="255" />
+    <Property Name="Created" Type="Edm.DateTimeOffset" />
+    <Property Name="ModifiedBy" Type="Edm.String" MaxLength="255" />
+    <Property Name="Modified" Type="Edm.DateTimeOffset" />
+    <Property Name="RowVersion" Type="Edm.Binary" Nullable="false" ConcurrencyMode="Fixed" annotation:StoreGeneratedPattern="Computed" />
+    <NavigationProperty Name="Articles" Relationship="LightSwitchApplication.Article_ArticleType" ToRole="Article" FromRole="ArticleType" />
+  </EntityType>
+  <EntityType Name="Author">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Edm.Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Article_Author" Type="Edm.Int32" Nullable="false" />
+    <Property Name="CreatedBy" Type="Edm.String" MaxLength="255" />
+    <Property Name="Created" Type="Edm.DateTimeOffset" />
+    <Property Name="ModifiedBy" Type="Edm.String" MaxLength="255" />
+    <Property Name="Modified" Type="Edm.DateTimeOffset" />
+    <Property Name="RowVersion" Type="Edm.Binary" Nullable="false" ConcurrencyMode="Fixed" annotation:StoreGeneratedPattern="Computed" />
+    <NavigationProperty Name="Article" Relationship="LightSwitchApplication.Article_Author" ToRole="Article" FromRole="Author" />
+  </EntityType>
+  <EntityType Name="Result">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Edm.Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Result_Article" Type="Edm.Int32" Nullable="false" />
+    <Property Name="CreatedBy" Type="Edm.String" MaxLength="255" />
+    <Property Name="Created" Type="Edm.DateTimeOffset" />
+    <Property Name="ModifiedBy" Type="Edm.String" MaxLength="255" />
+    <Property Name="Modified" Type="Edm.DateTimeOffset" />
+    <Property Name="RowVersion" Type="Edm.Binary" Nullable="false" ConcurrencyMode="Fixed" annotation:StoreGeneratedPattern="Computed" />
+    <NavigationProperty Name="Article" Relationship="LightSwitchApplication.Result_Article" ToRole="Article" FromRole="Result" />
+  </EntityType>
+  <Association Name="Result_Article">
+    <End Role="Article" Type="LightSwitchApplication.Article" Multiplicity="1" />
+    <End Role="Result" Type="LightSwitchApplication.Result" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Article">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Result">
+        <PropertyRef Name="Result_Article" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Article_Author">
+    <End Role="Article" Type="LightSwitchApplication.Article" Multiplicity="1" />
+    <End Role="Author" Type="LightSwitchApplication.Author" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Article">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Author">
+        <PropertyRef Name="Article_Author" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Article_ArticleType">
+    <End Role="ArticleType" Type="LightSwitchApplication.ArticleType" Multiplicity="1" />
+    <End Role="Article" Type="LightSwitchApplication.Article" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ArticleType">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Article">
+        <PropertyRef Name="Article_ArticleType" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="ApplicationData" m:IsDefaultEntityContainer="true">
+    <EntitySet Name="Articles" EntityType="LightSwitchApplication.Article" />
+    <EntitySet Name="ArticleTypes" EntityType="LightSwitchApplication.ArticleType" />
+    <EntitySet Name="Authors" EntityType="LightSwitchApplication.Author" />
+    <EntitySet Name="Results" EntityType="LightSwitchApplication.Result" />
+    <AssociationSet Name="Result_Article" Association="LightSwitchApplication.Result_Article">
+      <End Role="Article" EntitySet="Articles" />
+      <End Role="Result" EntitySet="Results" />
+    </AssociationSet>
+    <AssociationSet Name="Article_Author" Association="LightSwitchApplication.Article_Author">
+      <End Role="Article" EntitySet="Articles" />
+      <End Role="Author" EntitySet="Authors" />
+    </AssociationSet>
+    <AssociationSet Name="Article_ArticleType" Association="LightSwitchApplication.Article_ArticleType">
+      <End Role="ArticleType" EntitySet="ArticleTypes" />
+      <End Role="Article" EntitySet="Articles" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<ModelDocumentManifest xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Documents>
+    <Document FullPath="C:\Users\Brent\Documents\GitHub\LitStore\LitStore.HTMLClient\Properties\ApplicationData\Articles.lsml" Checksum="36707C6CFD189657391F68818D42D6FD265BF808859C96A64AEAF01C97A464A5" />
+    <Document FullPath="C:\Users\Brent\Documents\GitHub\LitStore\LitStore.HTMLClient\Properties\ApplicationData\ArticleTypes.lsml" Checksum="2D4A1AF654C6E4D7CA0434A081A9651A288F3C89DFBF456D7EF1DC55CD0D81CA" />
+    <Document FullPath="C:\Users\Brent\Documents\GitHub\LitStore\LitStore.HTMLClient\Properties\Client.lsml" Checksum="3D24868A4B23C9F2F8D41628E76A268F9051FABEE7F56BE94441CF4E7416476C" />
+    <Document FullPath="C:\Users\Brent\Documents\GitHub\LitStore\LitStore.HTMLClient\Properties\Proxies.lsml" Checksum="68EB07BB51888D723D2AC3EE30FF1328A88BB7FC4DF2C7FE9036826D2A58A565" />
+    <Document FullPath="C:\Users\Brent\Documents\GitHub\LitStore\LitStore.HTMLClient\Screens\Articles\AddEditArticle.lsml" Checksum="65B93BE16C02EE0972B235EB2FD3A97BAA3D8E8D32AB2887479F8AED0FA53AA8" />
+    <Document FullPath="C:\Users\Brent\Documents\GitHub\LitStore\LitStore.HTMLClient\Screens\Articles\BrowseArticles.lsml" Checksum="9F6A81E79233F8353EC07474E8A56A25D4FFCB48C1C2101F67796A1ADDC5846F" />
+    <Document FullPath="C:\Users\Brent\Documents\GitHub\LitStore\LitStore.HTMLClient\Screens\Articles\ViewArticle.lsml" Checksum="7A0B7D4ED491153EA897BC511492CF1F95FF5056D9BAEC0BCB1A7E8F1EC09DAE" />
+    <Document FullPath="C:\Users\Brent\Documents\GitHub\LitStore\LitStore.HTMLClient\Screens\ArticleTypes\AddEditArticleType.lsml" Checksum="E4E77EE8AC1A5902390DC4415DC343200BB81D7D1A8FD20F02AA2CA6D01D9FE5" />
+    <Document FullPath="C:\Users\Brent\Documents\GitHub\LitStore\LitStore.HTMLClient\Screens\ArticleTypes\BrowseArticleTypes.lsml" Checksum="E419DC240239546F1485B5F8B6B83CECBB471D4ED278D32E426D29300566940E" />
+    <Document FullPath="C:\Users\Brent\Documents\GitHub\LitStore\LitStore.HTMLClient\Screens\ArticleTypes\ViewArticleType.lsml" Checksum="B1410CD337F743A9C63A84B47961C76DC107DE90F79E419B13DA05BFAE74A25A" />
+    <Document FullPath="C:\Users\Brent\Documents\GitHub\LitStore\LitStore.HTMLClient\Screens\AddEditResult.lsml" Checksum="81A129F5ECA561572D0EACDF0C0C66AFEFDB6B373EBB0E006E62951CC0EDB6F8" />
+  </Documents>
+</ModelDocumentManifest>

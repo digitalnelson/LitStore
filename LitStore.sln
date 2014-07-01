@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30501.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{581633EB-B896-402F-8E60-36F3DA191C85}") = "LitStore", "LitStore.lsxtproj", "{4BC1DB62-B9F9-4067-839C-00984B9B0DEE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LitStore.Server", "LitStore.Server\LitStore.Server.csproj", "{AFF3A94D-B140-42CA-AFBD-68B680270E8B}"
+EndProject
+Project("{262852C6-CD72-467D-83FE-5EEB1973A190}") = "LitStore.HTMLClient", "LitStore.HTMLClient\LitStore.HTMLClient.jsproj", "{6142F560-FC1D-40EE-95A0-E4E636A90EBD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4BC1DB62-B9F9-4067-839C-00984B9B0DEE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4BC1DB62-B9F9-4067-839C-00984B9B0DEE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4BC1DB62-B9F9-4067-839C-00984B9B0DEE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4BC1DB62-B9F9-4067-839C-00984B9B0DEE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AFF3A94D-B140-42CA-AFBD-68B680270E8B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AFF3A94D-B140-42CA-AFBD-68B680270E8B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AFF3A94D-B140-42CA-AFBD-68B680270E8B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AFF3A94D-B140-42CA-AFBD-68B680270E8B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6142F560-FC1D-40EE-95A0-E4E636A90EBD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6142F560-FC1D-40EE-95A0-E4E636A90EBD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6142F560-FC1D-40EE-95A0-E4E636A90EBD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6142F560-FC1D-40EE-95A0-E4E636A90EBD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
