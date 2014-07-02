@@ -207,43 +207,6 @@ window.myapp = msls.application;
         $Entity.call(this, entitySet);
     }
 
-    function TargetType(entitySet) {
-        /// <summary>
-        /// Represents the TargetType entity type.
-        /// </summary>
-        /// <param name="entitySet" type="msls.EntitySet" optional="true">
-        /// The entity set that should contain this targetType.
-        /// </param>
-        /// <field name="Id" type="Number">
-        /// Gets or sets the id for this targetType.
-        /// </field>
-        /// <field name="Description" type="String">
-        /// Gets or sets the description for this targetType.
-        /// </field>
-        /// <field name="StudyTargets" type="msls.EntityCollection" elementType="msls.application.StudyTarget">
-        /// Gets the studyTargets for this targetType.
-        /// </field>
-        /// <field name="CreatedBy" type="String">
-        /// Gets or sets the createdBy for this targetType.
-        /// </field>
-        /// <field name="Created" type="Date">
-        /// Gets or sets the created for this targetType.
-        /// </field>
-        /// <field name="ModifiedBy" type="String">
-        /// Gets or sets the modifiedBy for this targetType.
-        /// </field>
-        /// <field name="Modified" type="Date">
-        /// Gets or sets the modified for this targetType.
-        /// </field>
-        /// <field name="RowVersion" type="Array">
-        /// Gets or sets the rowVersion for this targetType.
-        /// </field>
-        /// <field name="details" type="msls.application.TargetType.Details">
-        /// Gets the details for this targetType.
-        /// </field>
-        $Entity.call(this, entitySet);
-    }
-
     function StudyTarget(entitySet) {
         /// <summary>
         /// Represents the StudyTarget entity type.
@@ -281,6 +244,43 @@ window.myapp = msls.application;
         $Entity.call(this, entitySet);
     }
 
+    function TargetType(entitySet) {
+        /// <summary>
+        /// Represents the TargetType entity type.
+        /// </summary>
+        /// <param name="entitySet" type="msls.EntitySet" optional="true">
+        /// The entity set that should contain this targetType.
+        /// </param>
+        /// <field name="Id" type="Number">
+        /// Gets or sets the id for this targetType.
+        /// </field>
+        /// <field name="Description" type="String">
+        /// Gets or sets the description for this targetType.
+        /// </field>
+        /// <field name="StudyTargets" type="msls.EntityCollection" elementType="msls.application.StudyTarget">
+        /// Gets the studyTargets for this targetType.
+        /// </field>
+        /// <field name="CreatedBy" type="String">
+        /// Gets or sets the createdBy for this targetType.
+        /// </field>
+        /// <field name="Created" type="Date">
+        /// Gets or sets the created for this targetType.
+        /// </field>
+        /// <field name="ModifiedBy" type="String">
+        /// Gets or sets the modifiedBy for this targetType.
+        /// </field>
+        /// <field name="Modified" type="Date">
+        /// Gets or sets the modified for this targetType.
+        /// </field>
+        /// <field name="RowVersion" type="Array">
+        /// Gets or sets the rowVersion for this targetType.
+        /// </field>
+        /// <field name="details" type="msls.application.TargetType.Details">
+        /// Gets the details for this targetType.
+        /// </field>
+        $Entity.call(this, entitySet);
+    }
+
     function ApplicationData(dataWorkspace) {
         /// <summary>
         /// Represents the ApplicationData data service.
@@ -303,11 +303,11 @@ window.myapp = msls.application;
         /// <field name="StudyDesigns" type="msls.EntitySet">
         /// Gets the StudyDesigns entity set.
         /// </field>
-        /// <field name="TargetTypes" type="msls.EntitySet">
-        /// Gets the TargetTypes entity set.
-        /// </field>
         /// <field name="StudyTargets" type="msls.EntitySet">
         /// Gets the StudyTargets entity set.
+        /// </field>
+        /// <field name="TargetTypes" type="msls.EntitySet">
+        /// Gets the TargetTypes entity set.
         /// </field>
         /// <field name="details" type="msls.application.ApplicationData.Details">
         /// Gets the details for this data service.
@@ -387,10 +387,10 @@ window.myapp = msls.application;
             { name: "RowVersion", type: Array }
         ]),
 
-        TargetType: $defineEntity(TargetType, [
+        StudyTarget: $defineEntity(StudyTarget, [
             { name: "Id", type: Number },
-            { name: "Description", type: String },
-            { name: "StudyTargets", kind: "collection", elementType: StudyTarget },
+            { name: "TargetType", kind: "reference", type: TargetType },
+            { name: "Article", kind: "reference", type: Article },
             { name: "CreatedBy", type: String, isReadOnly: true },
             { name: "Created", type: Date, isReadOnly: true },
             { name: "ModifiedBy", type: String, isReadOnly: true },
@@ -398,10 +398,10 @@ window.myapp = msls.application;
             { name: "RowVersion", type: Array }
         ]),
 
-        StudyTarget: $defineEntity(StudyTarget, [
+        TargetType: $defineEntity(TargetType, [
             { name: "Id", type: Number },
-            { name: "TargetType", kind: "reference", type: TargetType },
-            { name: "Article", kind: "reference", type: Article },
+            { name: "Description", type: String },
+            { name: "StudyTargets", kind: "collection", elementType: StudyTarget },
             { name: "CreatedBy", type: String, isReadOnly: true },
             { name: "Created", type: Date, isReadOnly: true },
             { name: "ModifiedBy", type: String, isReadOnly: true },
@@ -415,8 +415,8 @@ window.myapp = msls.application;
             { name: "Authors", elementType: Author },
             { name: "Results", elementType: Result },
             { name: "StudyDesigns", elementType: StudyDesign },
-            { name: "TargetTypes", elementType: TargetType },
-            { name: "StudyTargets", elementType: StudyTarget }
+            { name: "StudyTargets", elementType: StudyTarget },
+            { name: "TargetTypes", elementType: TargetType }
         ], [
             {
                 name: "Articles_SingleOrDefault", value: function (Id) {
@@ -454,16 +454,16 @@ window.myapp = msls.application;
                 }
             },
             {
-                name: "TargetTypes_SingleOrDefault", value: function (Id) {
-                    return new $DataServiceQuery({ _entitySet: this.TargetTypes },
-                        lightSwitchApplication.rootUri + "/ApplicationData.svc" + "/TargetTypes(" + "Id=" + $toODataString(Id, "Int32?") + ")"
+                name: "StudyTargets_SingleOrDefault", value: function (Id) {
+                    return new $DataServiceQuery({ _entitySet: this.StudyTargets },
+                        lightSwitchApplication.rootUri + "/ApplicationData.svc" + "/StudyTargets(" + "Id=" + $toODataString(Id, "Int32?") + ")"
                     );
                 }
             },
             {
-                name: "StudyTargets_SingleOrDefault", value: function (Id) {
-                    return new $DataServiceQuery({ _entitySet: this.StudyTargets },
-                        lightSwitchApplication.rootUri + "/ApplicationData.svc" + "/StudyTargets(" + "Id=" + $toODataString(Id, "Int32?") + ")"
+                name: "TargetTypes_SingleOrDefault", value: function (Id) {
+                    return new $DataServiceQuery({ _entitySet: this.TargetTypes },
+                        lightSwitchApplication.rootUri + "/ApplicationData.svc" + "/TargetTypes(" + "Id=" + $toODataString(Id, "Int32?") + ")"
                     );
                 }
             }

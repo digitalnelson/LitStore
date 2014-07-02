@@ -42,20 +42,20 @@
         created: [lightSwitchApplication.StudyDesign]
     });
 
-    msls._addEntryPoints(lightSwitchApplication.TargetType, {
-        /// <field>
-        /// Called when a new targetType is created.
-        /// <br/>created(msls.application.TargetType entity)
-        /// </field>
-        created: [lightSwitchApplication.TargetType]
-    });
-
     msls._addEntryPoints(lightSwitchApplication.StudyTarget, {
         /// <field>
         /// Called when a new studyTarget is created.
         /// <br/>created(msls.application.StudyTarget entity)
         /// </field>
         created: [lightSwitchApplication.StudyTarget]
+    });
+
+    msls._addEntryPoints(lightSwitchApplication.TargetType, {
+        /// <field>
+        /// Called when a new targetType is created.
+        /// <br/>created(msls.application.TargetType entity)
+        /// </field>
+        created: [lightSwitchApplication.TargetType]
     });
 
 }(msls.application));

@@ -6,8 +6,8 @@
     <EntitySet Name="Authors" EntityType="ApplicationDataStore.Author" store:Type="Tables" Schema="dbo" Table="Authors" />
     <EntitySet Name="Results" EntityType="ApplicationDataStore.Result" store:Type="Tables" Schema="dbo" Table="Results" />
     <EntitySet Name="StudyDesigns" EntityType="ApplicationDataStore.StudyDesign" store:Type="Tables" Schema="dbo" Table="StudyDesigns" />
-    <EntitySet Name="TargetTypes" EntityType="ApplicationDataStore.TargetType" store:Type="Tables" Schema="dbo" Table="TargetTypes" />
     <EntitySet Name="StudyTargets" EntityType="ApplicationDataStore.StudyTarget" store:Type="Tables" Schema="dbo" Table="StudyTargets" />
+    <EntitySet Name="TargetTypes" EntityType="ApplicationDataStore.TargetType" store:Type="Tables" Schema="dbo" Table="TargetTypes" />
     <AssociationSet Name="Result_Article" Association="ApplicationDataStore.Result_Article">
       <End Role="Article" EntitySet="Articles" />
       <End Role="Result" EntitySet="Results" />
@@ -16,16 +16,16 @@
       <End Role="Article" EntitySet="Articles" />
       <End Role="Author" EntitySet="Authors" />
     </AssociationSet>
+    <AssociationSet Name="StudyTarget_Article" Association="ApplicationDataStore.StudyTarget_Article">
+      <End Role="Article" EntitySet="Articles" />
+      <End Role="StudyTarget" EntitySet="StudyTargets" />
+    </AssociationSet>
     <AssociationSet Name="Article_ArticleType" Association="ApplicationDataStore.Article_ArticleType">
       <End Role="ArticleType" EntitySet="ArticleTypes" />
       <End Role="Article" EntitySet="Articles" />
     </AssociationSet>
     <AssociationSet Name="StudyTarget_TargetType" Association="ApplicationDataStore.StudyTarget_TargetType">
       <End Role="TargetType" EntitySet="TargetTypes" />
-      <End Role="StudyTarget" EntitySet="StudyTargets" />
-    </AssociationSet>
-    <AssociationSet Name="StudyTarget_Article" Association="ApplicationDataStore.StudyTarget_Article">
-      <End Role="Article" EntitySet="Articles" />
       <End Role="StudyTarget" EntitySet="StudyTargets" />
     </AssociationSet>
   </EntityContainer>
@@ -93,6 +93,19 @@
     <Property Name="Modified" Type="datetimeoffset" />
     <Property Name="RowVersion" Type="rowversion" Nullable="false" StoreGeneratedPattern="Computed" />
   </EntityType>
+  <EntityType Name="StudyTarget">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="255" />
+    <Property Name="Created" Type="datetimeoffset" />
+    <Property Name="ModifiedBy" Type="nvarchar" MaxLength="255" />
+    <Property Name="Modified" Type="datetimeoffset" />
+    <Property Name="RowVersion" Type="rowversion" Nullable="false" StoreGeneratedPattern="Computed" />
+    <Property Name="StudyTarget_Article" Type="int" Nullable="false" />
+    <Property Name="StudyTarget_TargetType" Type="int" Nullable="false" />
+  </EntityType>
   <EntityType Name="TargetType">
     <Key>
       <PropertyRef Name="Id" />
@@ -104,19 +117,6 @@
     <Property Name="ModifiedBy" Type="nvarchar" MaxLength="255" />
     <Property Name="Modified" Type="datetimeoffset" />
     <Property Name="RowVersion" Type="rowversion" Nullable="false" StoreGeneratedPattern="Computed" />
-  </EntityType>
-  <EntityType Name="StudyTarget">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-    <Property Name="CreatedBy" Type="nvarchar" MaxLength="255" />
-    <Property Name="Created" Type="datetimeoffset" />
-    <Property Name="ModifiedBy" Type="nvarchar" MaxLength="255" />
-    <Property Name="Modified" Type="datetimeoffset" />
-    <Property Name="RowVersion" Type="rowversion" Nullable="false" StoreGeneratedPattern="Computed" />
-    <Property Name="StudyTarget_TargetType" Type="int" Nullable="false" />
-    <Property Name="StudyTarget_Article" Type="int" Nullable="false" />
   </EntityType>
   <Association Name="Result_Article">
     <End Role="Article" Type="ApplicationDataStore.Article" Multiplicity="1">
@@ -146,6 +146,20 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="StudyTarget_Article">
+    <End Role="Article" Type="ApplicationDataStore.Article" Multiplicity="1">
+      <OnDeleteAnnotation Action="Restrict" xmlns="http://schemas.microsoft.com/LightSwitch/2013/edm/annotations" />
+    </End>
+    <End Role="StudyTarget" Type="ApplicationDataStore.StudyTarget" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Article">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="StudyTarget">
+        <PropertyRef Name="StudyTarget_Article" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="Article_ArticleType">
     <End Role="ArticleType" Type="ApplicationDataStore.ArticleType" Multiplicity="1">
       <OnDeleteAnnotation Action="Restrict" xmlns="http://schemas.microsoft.com/LightSwitch/2013/edm/annotations" />
@@ -171,20 +185,6 @@
       </Principal>
       <Dependent Role="StudyTarget">
         <PropertyRef Name="StudyTarget_TargetType" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="StudyTarget_Article">
-    <End Role="Article" Type="ApplicationDataStore.Article" Multiplicity="1">
-      <OnDeleteAnnotation Action="Restrict" xmlns="http://schemas.microsoft.com/LightSwitch/2013/edm/annotations" />
-    </End>
-    <End Role="StudyTarget" Type="ApplicationDataStore.StudyTarget" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Article">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="StudyTarget">
-        <PropertyRef Name="StudyTarget_Article" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
