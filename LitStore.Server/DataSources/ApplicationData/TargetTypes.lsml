@@ -5,7 +5,7 @@
     <Partial />
   </ServiceApplication.Attributes>
   <EntityType
-    Name="Article">
+    Name="TargetType">
     <EntityType.Attributes>
       <CreatedModifiedPropertiesEnabled />
     </EntityType.Attributes>
@@ -27,7 +27,7 @@
         </KeyProperty.Attributes>
       </KeyProperty>
       <EntityProperty
-        Name="PMID"
+        Name="Description"
         PropertyType=":String">
         <EntityProperty.Attributes>
           <Required />
@@ -35,42 +35,10 @@
             Value="255" />
         </EntityProperty.Attributes>
       </EntityProperty>
-      <EntityProperty
-        Name="Title"
-        PropertyType=":String">
-        <EntityProperty.Attributes>
-          <Required />
-          <MaxLength
-            Value="255" />
-        </EntityProperty.Attributes>
-      </EntityProperty>
-      <EntityProperty
-        Name="SampleSize"
-        PropertyType=":Int32">
-        <EntityProperty.Attributes>
-          <Required />
-          <NotSearchable />
-        </EntityProperty.Attributes>
-      </EntityProperty>
-      <NavigationProperty
-        Name="Results"
-        Association="Result_Article"
-        FromEnd="Article"
-        ToEnd="Result" />
-      <NavigationProperty
-        Name="ArticleType"
-        Association="Article_ArticleType"
-        FromEnd="Article"
-        ToEnd="ArticleType" />
-      <NavigationProperty
-        Name="Authors"
-        Association="Article_Author"
-        FromEnd="Article"
-        ToEnd="Author" />
       <NavigationProperty
         Name="StudyTargets"
-        Association="StudyTarget_Article"
-        FromEnd="Article"
+        Association="StudyTarget_TargetType"
+        FromEnd="TargetType"
         ToEnd="StudyTarget" />
       <EntityProperty
         Name="CreatedBy"
@@ -130,14 +98,14 @@
       <Partial />
     </EntityContainer.Attributes>
     <EntitySet
-      Name="Articles"
+      Name="TargetTypes"
       CanDelete="True"
       CanInsert="True"
       CanUpdate="True"
-      EntityType="Article" />
+      EntityType="TargetType" />
     <QueryOperation
-      Name="Articles_Single"
-      ReturnType="Article">
+      Name="TargetTypes_Single"
+      ReturnType="TargetType">
       <QueryOperation.Attributes>
         <Generated />
         <Description
@@ -163,7 +131,7 @@
       <QueryOperation.Source>
         <QuerySourceExpressionTree>
           <MemberExpression
-            Member="Articles" />
+            Member="TargetTypes" />
         </QuerySourceExpressionTree>
       </QueryOperation.Source>
       <QueryOperationParameter
@@ -176,8 +144,8 @@
       </QueryOperationParameter>
     </QueryOperation>
     <QueryOperation
-      Name="Articles_SingleOrDefault"
-      ReturnType="Article">
+      Name="TargetTypes_SingleOrDefault"
+      ReturnType="TargetType">
       <QueryOperation.Attributes>
         <Generated />
         <Description
@@ -203,7 +171,7 @@
       <QueryOperation.Source>
         <QuerySourceExpressionTree>
           <MemberExpression
-            Member="Articles" />
+            Member="TargetTypes" />
         </QuerySourceExpressionTree>
       </QueryOperation.Source>
       <QueryOperationParameter
@@ -216,46 +184,26 @@
       </QueryOperationParameter>
     </QueryOperation>
     <AssociationSet
-      Name="Result_Articles"
-      Association="Result_Article">
-      <AssociationSetEnd
-        Name="Result"
-        EntitySet="Results" />
-      <AssociationSetEnd
-        Name="Article"
-        EntitySet="Articles" />
-    </AssociationSet>
-    <AssociationSet
-      Name="Article_Authors"
-      Association="Article_Author">
-      <AssociationSetEnd
-        Name="Article"
-        EntitySet="Articles" />
-      <AssociationSetEnd
-        Name="Author"
-        EntitySet="Authors" />
-    </AssociationSet>
-    <AssociationSet
-      Name="StudyTarget_Articles"
-      Association="StudyTarget_Article">
+      Name="StudyTarget_TargetTypes"
+      Association="StudyTarget_TargetType">
       <AssociationSetEnd
         Name="StudyTarget"
         EntitySet="StudyTargets" />
       <AssociationSetEnd
-        Name="Article"
-        EntitySet="Articles" />
+        Name="TargetType"
+        EntitySet="TargetTypes" />
     </AssociationSet>
   </EntityContainer>
   <Association
-    Name="Result_Article">
+    Name="StudyTarget_TargetType">
     <AssociationEnd
-      Name="Result"
+      Name="StudyTarget"
       Multiplicity="Many"
-      EntityType="Result" />
+      EntityType="StudyTarget" />
     <AssociationEnd
-      Name="Article"
+      Name="TargetType"
       Multiplicity="One"
-      EntityType="Article">
+      EntityType="TargetType">
       <AssociationEnd.Attributes>
         <DeleteRule
           Action="Restrict" />
@@ -268,70 +216,19 @@
       <Partial />
     </DataService.Attributes>
     <AssociationSetMapping
-      AssociationSet="Result_Articles">
+      AssociationSet="StudyTarget_TargetTypes">
       <AssociationSetMapping.Attributes>
         <SsdlAssociationSet
-          Name="Result_Articles" />
+          Name="StudyTarget_TargetTypes" />
         <SsdlAssociationSetEnd
-          End="ApplicationData/Members[Result_Articles]/Members[Result]">
+          End="ApplicationData/Members[StudyTarget_TargetTypes]/Members[StudyTarget]">
           <SsdlAssociationSetEnd.Attributes>
             <SsdlPropertyRef
-              Name="Result_Article" />
+              Name="StudyTarget_TargetType" />
           </SsdlAssociationSetEnd.Attributes>
         </SsdlAssociationSetEnd>
         <SsdlAssociationSetEnd
-          End="ApplicationData/Members[Result_Articles]/Members[Article]">
-          <SsdlAssociationSetEnd.Attributes>
-            <SsdlPropertyRef
-              Name="Id" />
-          </SsdlAssociationSetEnd.Attributes>
-        </SsdlAssociationSetEnd>
-      </AssociationSetMapping.Attributes>
-    </AssociationSetMapping>
-    <EntitySetMapping
-      EntitySet="Articles">
-      <EntitySetMapping.Attributes>
-        <SsdlForeignKeyProperty
-          Name="Article_ArticleType"
-          Nullable="False"
-          Type="int" />
-      </EntitySetMapping.Attributes>
-    </EntitySetMapping>
-    <AssociationSetMapping
-      AssociationSet="Article_Authors">
-      <AssociationSetMapping.Attributes>
-        <SsdlAssociationSet
-          Name="Article_Authors" />
-        <SsdlAssociationSetEnd
-          End="ApplicationData/Members[Article_Authors]/Members[Article]">
-          <SsdlAssociationSetEnd.Attributes>
-            <SsdlPropertyRef
-              Name="Id" />
-          </SsdlAssociationSetEnd.Attributes>
-        </SsdlAssociationSetEnd>
-        <SsdlAssociationSetEnd
-          End="ApplicationData/Members[Article_Authors]/Members[Author]">
-          <SsdlAssociationSetEnd.Attributes>
-            <SsdlPropertyRef
-              Name="Article_Author" />
-          </SsdlAssociationSetEnd.Attributes>
-        </SsdlAssociationSetEnd>
-      </AssociationSetMapping.Attributes>
-    </AssociationSetMapping>
-    <AssociationSetMapping
-      AssociationSet="StudyTarget_Articles">
-      <AssociationSetMapping.Attributes>
-        <SsdlAssociationSet
-          Name="StudyTarget_Articles" />
-        <SsdlAssociationSetEnd
-          End="ApplicationData/Members[StudyTarget_Articles]/Members[StudyTarget]">
-          <SsdlAssociationSetEnd.Attributes>
-            <SsdlPropertyRef
-              Name="StudyTarget_Article" />
-          </SsdlAssociationSetEnd.Attributes>
-        </SsdlAssociationSetEnd>
-        <SsdlAssociationSetEnd
-          End="ApplicationData/Members[StudyTarget_Articles]/Members[Article]">
+          End="ApplicationData/Members[StudyTarget_TargetTypes]/Members[TargetType]">
           <SsdlAssociationSetEnd.Attributes>
             <SsdlPropertyRef
               Name="Id" />
@@ -340,36 +237,4 @@
       </AssociationSetMapping.Attributes>
     </AssociationSetMapping>
   </DataService>
-  <Association
-    Name="Article_Author">
-    <AssociationEnd
-      Name="Article"
-      Multiplicity="One"
-      EntityType="Article">
-      <AssociationEnd.Attributes>
-        <DeleteRule
-          Action="Restrict" />
-      </AssociationEnd.Attributes>
-    </AssociationEnd>
-    <AssociationEnd
-      Name="Author"
-      Multiplicity="Many"
-      EntityType="Author" />
-  </Association>
-  <Association
-    Name="StudyTarget_Article">
-    <AssociationEnd
-      Name="StudyTarget"
-      Multiplicity="Many"
-      EntityType="StudyTarget" />
-    <AssociationEnd
-      Name="Article"
-      Multiplicity="One"
-      EntityType="Article">
-      <AssociationEnd.Attributes>
-        <DeleteRule
-          Action="Restrict" />
-      </AssociationEnd.Attributes>
-    </AssociationEnd>
-  </Association>
 </ServiceApplication>

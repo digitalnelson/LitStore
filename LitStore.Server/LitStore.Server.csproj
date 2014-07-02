@@ -226,6 +226,9 @@
     <LightSwitchModel Include="DataSources\ApplicationData\Authors.lsml" />
     <LightSwitchModel Include="DataSources\ApplicationData\Results.lsml" />
     <LightSwitchModel Include="DataSources\ApplicationData\ArticleTypes.lsml" />
+    <LightSwitchModel Include="DataSources\ApplicationData\StudyDesigns.lsml" />
+    <LightSwitchModel Include="DataSources\ApplicationData\TargetTypes.lsml" />
+    <LightSwitchModel Include="DataSources\ApplicationData\StudyTargets.lsml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

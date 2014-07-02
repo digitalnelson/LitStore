@@ -204,6 +204,114 @@ namespace LightSwitchApplication
         partial void Results_Filter(ref global::System.Linq.Expressions.Expression<global::System.Func<global::LightSwitchApplication.Result, bool>> filter);
     
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void StudyDesigns_CanInsert(ref bool result);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void StudyDesigns_CanUpdate(ref bool result);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void StudyDesigns_CanDelete(ref bool result);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void StudyDesigns_CanRead(ref bool result);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void StudyDesigns_Inserting(global::LightSwitchApplication.StudyDesign entity);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void StudyDesigns_Inserted(global::LightSwitchApplication.StudyDesign entity);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void StudyDesigns_Updating(global::LightSwitchApplication.StudyDesign entity);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void StudyDesigns_Updated(global::LightSwitchApplication.StudyDesign entity);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void StudyDesigns_Deleting(global::LightSwitchApplication.StudyDesign entity);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void StudyDesigns_Deleted(global::LightSwitchApplication.StudyDesign entity);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void StudyDesigns_Validate(global::LightSwitchApplication.StudyDesign entity, global::Microsoft.LightSwitch.EntitySetValidationResultsBuilder results);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void StudyDesigns_Filter(ref global::System.Linq.Expressions.Expression<global::System.Func<global::LightSwitchApplication.StudyDesign, bool>> filter);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void TargetTypes_CanInsert(ref bool result);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void TargetTypes_CanUpdate(ref bool result);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void TargetTypes_CanDelete(ref bool result);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void TargetTypes_CanRead(ref bool result);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void TargetTypes_Inserting(global::LightSwitchApplication.TargetType entity);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void TargetTypes_Inserted(global::LightSwitchApplication.TargetType entity);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void TargetTypes_Updating(global::LightSwitchApplication.TargetType entity);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void TargetTypes_Updated(global::LightSwitchApplication.TargetType entity);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void TargetTypes_Deleting(global::LightSwitchApplication.TargetType entity);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void TargetTypes_Deleted(global::LightSwitchApplication.TargetType entity);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void TargetTypes_Validate(global::LightSwitchApplication.TargetType entity, global::Microsoft.LightSwitch.EntitySetValidationResultsBuilder results);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void TargetTypes_Filter(ref global::System.Linq.Expressions.Expression<global::System.Func<global::LightSwitchApplication.TargetType, bool>> filter);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void StudyTargets_CanInsert(ref bool result);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void StudyTargets_CanUpdate(ref bool result);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void StudyTargets_CanDelete(ref bool result);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void StudyTargets_CanRead(ref bool result);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void StudyTargets_Inserting(global::LightSwitchApplication.StudyTarget entity);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void StudyTargets_Inserted(global::LightSwitchApplication.StudyTarget entity);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void StudyTargets_Updating(global::LightSwitchApplication.StudyTarget entity);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void StudyTargets_Updated(global::LightSwitchApplication.StudyTarget entity);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void StudyTargets_Deleting(global::LightSwitchApplication.StudyTarget entity);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void StudyTargets_Deleted(global::LightSwitchApplication.StudyTarget entity);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void StudyTargets_Validate(global::LightSwitchApplication.StudyTarget entity, global::Microsoft.LightSwitch.EntitySetValidationResultsBuilder results);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void StudyTargets_Filter(ref global::System.Linq.Expressions.Expression<global::System.Func<global::LightSwitchApplication.StudyTarget, bool>> filter);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
         partial void SaveChanges_CanExecute(ref bool result);
     
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -543,6 +651,234 @@ namespace LightSwitchApplication
             {
                 global::System.Linq.Expressions.Expression<global::System.Func<global::LightSwitchApplication.Result, bool>> filter = null;
                 d.Results_Filter(ref filter);
+                return filter;
+            }
+            
+            [global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
+            [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+            private static readonly global::Microsoft.LightSwitch.Details.Framework.Server.EntitySetEntry<global::LightSwitchApplication.ApplicationDataService, global::LightSwitchApplication.StudyDesign>
+                __StudyDesignsEntry = new global::Microsoft.LightSwitch.Details.Framework.Server.EntitySetEntry<global::LightSwitchApplication.ApplicationDataService, global::LightSwitchApplication.StudyDesign>(
+                    "StudyDesigns",
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__StudyDesigns_CanInsert,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__StudyDesigns_CanUpdate,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__StudyDesigns_CanDelete,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__StudyDesigns_CanRead,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__StudyDesigns_Inserting,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__StudyDesigns_Inserted,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__StudyDesigns_Updating,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__StudyDesigns_Updated,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__StudyDesigns_Deleting,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__StudyDesigns_Deleted,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__StudyDesigns_Validate,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__StudyDesigns_Filter);
+            private static bool __StudyDesigns_CanInsert(global::LightSwitchApplication.ApplicationDataService d)
+            {
+                bool result = true;
+                d.StudyDesigns_CanInsert(ref result);
+                return result;
+            }
+            private static bool __StudyDesigns_CanUpdate(global::LightSwitchApplication.ApplicationDataService d)
+            {
+                bool result = true;
+                d.StudyDesigns_CanUpdate(ref result);
+                return result;
+            }
+            private static bool __StudyDesigns_CanDelete(global::LightSwitchApplication.ApplicationDataService d)
+            {
+                bool result = true;
+                d.StudyDesigns_CanDelete(ref result);
+                return result;
+            }
+            private static bool __StudyDesigns_CanRead(global::LightSwitchApplication.ApplicationDataService d)
+            {
+                bool result = true;
+                d.StudyDesigns_CanRead(ref result);
+                return result;
+            }
+            private static void __StudyDesigns_Inserting(global::LightSwitchApplication.ApplicationDataService d, global::LightSwitchApplication.StudyDesign e)
+            {
+                d.StudyDesigns_Inserting(e);
+            }
+            private static void __StudyDesigns_Inserted(global::LightSwitchApplication.ApplicationDataService d, global::LightSwitchApplication.StudyDesign e)
+            {
+                d.StudyDesigns_Inserted(e);
+            }
+            private static void __StudyDesigns_Updating(global::LightSwitchApplication.ApplicationDataService d, global::LightSwitchApplication.StudyDesign e)
+            {
+                d.StudyDesigns_Updating(e);
+            }
+            private static void __StudyDesigns_Updated(global::LightSwitchApplication.ApplicationDataService d, global::LightSwitchApplication.StudyDesign e)
+            {
+                d.StudyDesigns_Updated(e);
+            }
+            private static void __StudyDesigns_Deleting(global::LightSwitchApplication.ApplicationDataService d, global::LightSwitchApplication.StudyDesign e)
+            {
+                d.StudyDesigns_Deleting(e);
+            }
+            private static void __StudyDesigns_Deleted(global::LightSwitchApplication.ApplicationDataService d, global::LightSwitchApplication.StudyDesign e)
+            {
+                d.StudyDesigns_Deleted(e);
+            }
+            private static void __StudyDesigns_Validate(global::LightSwitchApplication.ApplicationDataService d, global::LightSwitchApplication.StudyDesign e, global::Microsoft.LightSwitch.EntitySetValidationResultsBuilder r)
+            {
+                d.StudyDesigns_Validate(e, r);
+            }
+            private static global::System.Linq.Expressions.Expression<global::System.Func<global::LightSwitchApplication.StudyDesign, bool>> __StudyDesigns_Filter(global::LightSwitchApplication.ApplicationDataService d)
+            {
+                global::System.Linq.Expressions.Expression<global::System.Func<global::LightSwitchApplication.StudyDesign, bool>> filter = null;
+                d.StudyDesigns_Filter(ref filter);
+                return filter;
+            }
+            
+            [global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
+            [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+            private static readonly global::Microsoft.LightSwitch.Details.Framework.Server.EntitySetEntry<global::LightSwitchApplication.ApplicationDataService, global::LightSwitchApplication.TargetType>
+                __TargetTypesEntry = new global::Microsoft.LightSwitch.Details.Framework.Server.EntitySetEntry<global::LightSwitchApplication.ApplicationDataService, global::LightSwitchApplication.TargetType>(
+                    "TargetTypes",
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__TargetTypes_CanInsert,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__TargetTypes_CanUpdate,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__TargetTypes_CanDelete,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__TargetTypes_CanRead,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__TargetTypes_Inserting,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__TargetTypes_Inserted,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__TargetTypes_Updating,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__TargetTypes_Updated,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__TargetTypes_Deleting,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__TargetTypes_Deleted,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__TargetTypes_Validate,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__TargetTypes_Filter);
+            private static bool __TargetTypes_CanInsert(global::LightSwitchApplication.ApplicationDataService d)
+            {
+                bool result = true;
+                d.TargetTypes_CanInsert(ref result);
+                return result;
+            }
+            private static bool __TargetTypes_CanUpdate(global::LightSwitchApplication.ApplicationDataService d)
+            {
+                bool result = true;
+                d.TargetTypes_CanUpdate(ref result);
+                return result;
+            }
+            private static bool __TargetTypes_CanDelete(global::LightSwitchApplication.ApplicationDataService d)
+            {
+                bool result = true;
+                d.TargetTypes_CanDelete(ref result);
+                return result;
+            }
+            private static bool __TargetTypes_CanRead(global::LightSwitchApplication.ApplicationDataService d)
+            {
+                bool result = true;
+                d.TargetTypes_CanRead(ref result);
+                return result;
+            }
+            private static void __TargetTypes_Inserting(global::LightSwitchApplication.ApplicationDataService d, global::LightSwitchApplication.TargetType e)
+            {
+                d.TargetTypes_Inserting(e);
+            }
+            private static void __TargetTypes_Inserted(global::LightSwitchApplication.ApplicationDataService d, global::LightSwitchApplication.TargetType e)
+            {
+                d.TargetTypes_Inserted(e);
+            }
+            private static void __TargetTypes_Updating(global::LightSwitchApplication.ApplicationDataService d, global::LightSwitchApplication.TargetType e)
+            {
+                d.TargetTypes_Updating(e);
+            }
+            private static void __TargetTypes_Updated(global::LightSwitchApplication.ApplicationDataService d, global::LightSwitchApplication.TargetType e)
+            {
+                d.TargetTypes_Updated(e);
+            }
+            private static void __TargetTypes_Deleting(global::LightSwitchApplication.ApplicationDataService d, global::LightSwitchApplication.TargetType e)
+            {
+                d.TargetTypes_Deleting(e);
+            }
+            private static void __TargetTypes_Deleted(global::LightSwitchApplication.ApplicationDataService d, global::LightSwitchApplication.TargetType e)
+            {
+                d.TargetTypes_Deleted(e);
+            }
+            private static void __TargetTypes_Validate(global::LightSwitchApplication.ApplicationDataService d, global::LightSwitchApplication.TargetType e, global::Microsoft.LightSwitch.EntitySetValidationResultsBuilder r)
+            {
+                d.TargetTypes_Validate(e, r);
+            }
+            private static global::System.Linq.Expressions.Expression<global::System.Func<global::LightSwitchApplication.TargetType, bool>> __TargetTypes_Filter(global::LightSwitchApplication.ApplicationDataService d)
+            {
+                global::System.Linq.Expressions.Expression<global::System.Func<global::LightSwitchApplication.TargetType, bool>> filter = null;
+                d.TargetTypes_Filter(ref filter);
+                return filter;
+            }
+            
+            [global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
+            [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+            private static readonly global::Microsoft.LightSwitch.Details.Framework.Server.EntitySetEntry<global::LightSwitchApplication.ApplicationDataService, global::LightSwitchApplication.StudyTarget>
+                __StudyTargetsEntry = new global::Microsoft.LightSwitch.Details.Framework.Server.EntitySetEntry<global::LightSwitchApplication.ApplicationDataService, global::LightSwitchApplication.StudyTarget>(
+                    "StudyTargets",
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__StudyTargets_CanInsert,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__StudyTargets_CanUpdate,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__StudyTargets_CanDelete,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__StudyTargets_CanRead,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__StudyTargets_Inserting,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__StudyTargets_Inserted,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__StudyTargets_Updating,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__StudyTargets_Updated,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__StudyTargets_Deleting,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__StudyTargets_Deleted,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__StudyTargets_Validate,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__StudyTargets_Filter);
+            private static bool __StudyTargets_CanInsert(global::LightSwitchApplication.ApplicationDataService d)
+            {
+                bool result = true;
+                d.StudyTargets_CanInsert(ref result);
+                return result;
+            }
+            private static bool __StudyTargets_CanUpdate(global::LightSwitchApplication.ApplicationDataService d)
+            {
+                bool result = true;
+                d.StudyTargets_CanUpdate(ref result);
+                return result;
+            }
+            private static bool __StudyTargets_CanDelete(global::LightSwitchApplication.ApplicationDataService d)
+            {
+                bool result = true;
+                d.StudyTargets_CanDelete(ref result);
+                return result;
+            }
+            private static bool __StudyTargets_CanRead(global::LightSwitchApplication.ApplicationDataService d)
+            {
+                bool result = true;
+                d.StudyTargets_CanRead(ref result);
+                return result;
+            }
+            private static void __StudyTargets_Inserting(global::LightSwitchApplication.ApplicationDataService d, global::LightSwitchApplication.StudyTarget e)
+            {
+                d.StudyTargets_Inserting(e);
+            }
+            private static void __StudyTargets_Inserted(global::LightSwitchApplication.ApplicationDataService d, global::LightSwitchApplication.StudyTarget e)
+            {
+                d.StudyTargets_Inserted(e);
+            }
+            private static void __StudyTargets_Updating(global::LightSwitchApplication.ApplicationDataService d, global::LightSwitchApplication.StudyTarget e)
+            {
+                d.StudyTargets_Updating(e);
+            }
+            private static void __StudyTargets_Updated(global::LightSwitchApplication.ApplicationDataService d, global::LightSwitchApplication.StudyTarget e)
+            {
+                d.StudyTargets_Updated(e);
+            }
+            private static void __StudyTargets_Deleting(global::LightSwitchApplication.ApplicationDataService d, global::LightSwitchApplication.StudyTarget e)
+            {
+                d.StudyTargets_Deleting(e);
+            }
+            private static void __StudyTargets_Deleted(global::LightSwitchApplication.ApplicationDataService d, global::LightSwitchApplication.StudyTarget e)
+            {
+                d.StudyTargets_Deleted(e);
+            }
+            private static void __StudyTargets_Validate(global::LightSwitchApplication.ApplicationDataService d, global::LightSwitchApplication.StudyTarget e, global::Microsoft.LightSwitch.EntitySetValidationResultsBuilder r)
+            {
+                d.StudyTargets_Validate(e, r);
+            }
+            private static global::System.Linq.Expressions.Expression<global::System.Func<global::LightSwitchApplication.StudyTarget, bool>> __StudyTargets_Filter(global::LightSwitchApplication.ApplicationDataService d)
+            {
+                global::System.Linq.Expressions.Expression<global::System.Func<global::LightSwitchApplication.StudyTarget, bool>> filter = null;
+                d.StudyTargets_Filter(ref filter);
                 return filter;
             }
             

@@ -365,6 +365,29 @@ namespace LightSwitchApplication
             }
         }
 
+        /// <summary>
+        /// No Modeled Description Available
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "12.1.0.0")]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public global::Microsoft.LightSwitch.Framework.EntityCollection<global::LightSwitchApplication.StudyTarget> StudyTargets
+        {
+            get
+            {
+                return global::LightSwitchApplication.Article.DetailsClass.GetValue(this, global::LightSwitchApplication.Article.DetailsClass.PropertySetProperties.StudyTargets);
+            }
+        }
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "12.1.0.0")]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public Microsoft.LightSwitch.IDataServiceQueryable<global::LightSwitchApplication.StudyTarget> StudyTargetsQuery
+        {
+            get
+            {
+                return global::LightSwitchApplication.Article.DetailsClass.GetQuery(this, global::LightSwitchApplication.Article.DetailsClass.PropertySetProperties.StudyTargets);
+            }
+        }
+
         #endregion
     
         #region Details Class
@@ -543,6 +566,14 @@ namespace LightSwitchApplication
                     }
                 }
                 
+                public global::Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty<global::LightSwitchApplication.Article, global::LightSwitchApplication.Article.DetailsClass, global::LightSwitchApplication.StudyTarget> StudyTargets
+                {
+                    get
+                    {
+                        return base.GetItem(global::LightSwitchApplication.Article.DetailsClass.PropertySetProperties.StudyTargets) as global::Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty<global::LightSwitchApplication.Article, global::LightSwitchApplication.Article.DetailsClass, global::LightSwitchApplication.StudyTarget>;
+                    }
+                }
+                
             }
     
             #pragma warning disable 109
@@ -561,6 +592,7 @@ namespace LightSwitchApplication
                 new global::System.Collections.IEnumerable Results { get; }
                 new global::Microsoft.LightSwitch.Internal.IEntityImplementation ArticleType { get; set; }
                 new global::System.Collections.IEnumerable Authors { get; }
+                new global::System.Collections.IEnumerable StudyTargets { get; }
             }
             #pragma warning restore 109
     
@@ -974,6 +1006,26 @@ namespace LightSwitchApplication
                     return d.ImplementationEntity.Authors;
                 }
     
+                [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+                public static readonly global::Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty<global::LightSwitchApplication.Article, global::LightSwitchApplication.Article.DetailsClass, global::LightSwitchApplication.StudyTarget>.Entry
+                    StudyTargets = new global::Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty<global::LightSwitchApplication.Article, global::LightSwitchApplication.Article.DetailsClass, global::LightSwitchApplication.StudyTarget>.Entry(
+                        "StudyTargets",
+                        global::LightSwitchApplication.Article.DetailsClass.PropertySetProperties._StudyTargets_Stub,
+                        global::LightSwitchApplication.Article.DetailsClass.PropertySetProperties._StudyTargets_GetReferencedEntities,
+                        global::LightSwitchApplication.Article.DetailsClass.PropertySetProperties._StudyTargets_GetEntityCollection);
+                private static void _StudyTargets_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.Article.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty<global::LightSwitchApplication.Article, global::LightSwitchApplication.Article.DetailsClass, global::LightSwitchApplication.StudyTarget>.Data> c, global::LightSwitchApplication.Article.DetailsClass d, object sf)
+                {
+                    c(d, ref d._StudyTargets, sf);
+                }
+                private static global::System.Collections.Generic.IEnumerable<global::LightSwitchApplication.StudyTarget> _StudyTargets_GetReferencedEntities(global::LightSwitchApplication.Article.DetailsClass d)
+                {
+                    return d.GetReferencedEntities<global::LightSwitchApplication.StudyTarget, global::LightSwitchApplication.StudyTarget.DetailsClass>(global::LightSwitchApplication.Article.DetailsClass.PropertySetProperties.StudyTargets, ref d._StudyTargets);
+                }
+                private static global::System.Collections.IEnumerable _StudyTargets_GetEntityCollection(global::LightSwitchApplication.Article.DetailsClass d)
+                {
+                    return d.ImplementationEntity.StudyTargets;
+                }
+    
             }
     
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
@@ -1011,6 +1063,9 @@ namespace LightSwitchApplication
             
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
             private global::Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty<global::LightSwitchApplication.Article, global::LightSwitchApplication.Article.DetailsClass, global::LightSwitchApplication.Author>.Data _Authors;
+            
+            [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+            private global::Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty<global::LightSwitchApplication.Article, global::LightSwitchApplication.Article.DetailsClass, global::LightSwitchApplication.StudyTarget>.Data _StudyTargets;
             
         }
     

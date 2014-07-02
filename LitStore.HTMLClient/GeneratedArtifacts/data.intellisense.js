@@ -10,6 +10,14 @@
         created: [lightSwitchApplication.Article]
     });
 
+    msls._addEntryPoints(lightSwitchApplication.ArticleType, {
+        /// <field>
+        /// Called when a new articleType is created.
+        /// <br/>created(msls.application.ArticleType entity)
+        /// </field>
+        created: [lightSwitchApplication.ArticleType]
+    });
+
     msls._addEntryPoints(lightSwitchApplication.Author, {
         /// <field>
         /// Called when a new author is created.
@@ -26,12 +34,28 @@
         created: [lightSwitchApplication.Result]
     });
 
-    msls._addEntryPoints(lightSwitchApplication.ArticleType, {
+    msls._addEntryPoints(lightSwitchApplication.StudyDesign, {
         /// <field>
-        /// Called when a new articleType is created.
-        /// <br/>created(msls.application.ArticleType entity)
+        /// Called when a new studyDesign is created.
+        /// <br/>created(msls.application.StudyDesign entity)
         /// </field>
-        created: [lightSwitchApplication.ArticleType]
+        created: [lightSwitchApplication.StudyDesign]
+    });
+
+    msls._addEntryPoints(lightSwitchApplication.TargetType, {
+        /// <field>
+        /// Called when a new targetType is created.
+        /// <br/>created(msls.application.TargetType entity)
+        /// </field>
+        created: [lightSwitchApplication.TargetType]
+    });
+
+    msls._addEntryPoints(lightSwitchApplication.StudyTarget, {
+        /// <field>
+        /// Called when a new studyTarget is created.
+        /// <br/>created(msls.application.StudyTarget entity)
+        /// </field>
+        created: [lightSwitchApplication.StudyTarget]
     });
 
 }(msls.application));
