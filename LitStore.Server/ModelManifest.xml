@@ -5,10 +5,10 @@
     <Document FullPath="C:\Users\Brent\Documents\GitHub\LitStore\LitStore.Server\DataSources\ApplicationData\ArticleTypes.lsml" Checksum="7689D7F4467D23A99D036BD4916397F44087AD2868BB2C46FB5DBC2CEAD92A15" />
     <Document FullPath="C:\Users\Brent\Documents\GitHub\LitStore\LitStore.Server\DataSources\ApplicationData\Authors.lsml" Checksum="64D8A4D486BD20F0833DC31CAEB264C113A060148DEFB48BD3C2FD769BC2BAC1" />
     <Document FullPath="C:\Users\Brent\Documents\GitHub\LitStore\LitStore.Server\DataSources\ApplicationData\Results.lsml" Checksum="6092E8AD850AAE0F1AFBAAB91CBE30C6A2D9040F7F80789972A01FBA1A4D1377" />
+    <Document FullPath="C:\Users\Brent\Documents\GitHub\LitStore\LitStore.Server\DataSources\ApplicationData\StudyDesigns.lsml" Checksum="9632E6705A0E7F4FC7C29BE73F1876D281A7194BB76C2E45BF5DDD3E2DCFBD6E" />
+    <Document FullPath="C:\Users\Brent\Documents\GitHub\LitStore\LitStore.Server\DataSources\ApplicationData\StudyTargets.lsml" Checksum="C05EA6BB4AC889C2F4165E851F5FB3286297EB9B8CCF81590D87AA650993DFD7" />
+    <Document FullPath="C:\Users\Brent\Documents\GitHub\LitStore\LitStore.Server\DataSources\ApplicationData\TargetTypes.lsml" Checksum="9DD93DF05768ED776F8D7A90C1348F52023BB6E94AA603D6E546EF9D565EEDB0" />
     <Document FullPath="C:\Users\Brent\Documents\GitHub\LitStore\LitStore.Server\Properties\DataSources\ApplicationData.lsml" Checksum="E6FEEAC3B4A850AAC5F0029259A0B9F8C1BD45F2950D17BD8D6664B9422E6AD6" />
     <Document FullPath="C:\Users\Brent\Documents\GitHub\LitStore\LitStore.Server\Properties\Service.lsml" Checksum="679C78F29C5AF23E9956A773B0E46DF90F7B86CADA0B79571E5896A1C79F5B70" />
-    <Document FullPath="C:\Users\Brent\Documents\GitHub\LitStore\LitStore.Server\DataSources\ApplicationData\StudyDesigns.lsml" Checksum="9632E6705A0E7F4FC7C29BE73F1876D281A7194BB76C2E45BF5DDD3E2DCFBD6E" />
-    <Document FullPath="C:\Users\Brent\Documents\GitHub\LitStore\LitStore.Server\DataSources\ApplicationData\TargetTypes.lsml" Checksum="9DD93DF05768ED776F8D7A90C1348F52023BB6E94AA603D6E546EF9D565EEDB0" />
-    <Document FullPath="C:\Users\Brent\Documents\GitHub\LitStore\LitStore.Server\DataSources\ApplicationData\StudyTargets.lsml" Checksum="C05EA6BB4AC889C2F4165E851F5FB3286297EB9B8CCF81590D87AA650993DFD7" />
   </Documents>
 </ModelDocumentManifest>

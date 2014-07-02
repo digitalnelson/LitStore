@@ -58,6 +58,18 @@ namespace LightSwitchApplication.Implementation
             {
                 return new global::LightSwitchApplication.Implementation.Result();
             }
+            if (type == typeof(global::LightSwitchApplication.Implementation.StudyDesign))
+            {
+                return new global::LightSwitchApplication.Implementation.StudyDesign();
+            }
+            if (type == typeof(global::LightSwitchApplication.Implementation.StudyTarget))
+            {
+                return new global::LightSwitchApplication.Implementation.StudyTarget();
+            }
+            if (type == typeof(global::LightSwitchApplication.Implementation.TargetType))
+            {
+                return new global::LightSwitchApplication.Implementation.TargetType();
+            }
     
             return base.CreateObject(type);
         }
@@ -89,6 +101,18 @@ namespace LightSwitchApplication.Implementation
             if (typeof(T) == typeof(global::LightSwitchApplication.Result))
             {
                 return new global::LightSwitchApplication.Implementation.Result();
+            }
+            if (typeof(T) == typeof(global::LightSwitchApplication.StudyDesign))
+            {
+                return new global::LightSwitchApplication.Implementation.StudyDesign();
+            }
+            if (typeof(T) == typeof(global::LightSwitchApplication.StudyTarget))
+            {
+                return new global::LightSwitchApplication.Implementation.StudyTarget();
+            }
+            if (typeof(T) == typeof(global::LightSwitchApplication.TargetType))
+            {
+                return new global::LightSwitchApplication.Implementation.TargetType();
             }
             return null;
         }
@@ -151,6 +175,18 @@ namespace LightSwitchApplication.Implementation
             {
                 return typeof(global::LightSwitchApplication.Implementation.Result);
             }
+            if (typeof(global::LightSwitchApplication.StudyDesign) == definitionType)
+            {
+                return typeof(global::LightSwitchApplication.Implementation.StudyDesign);
+            }
+            if (typeof(global::LightSwitchApplication.StudyTarget) == definitionType)
+            {
+                return typeof(global::LightSwitchApplication.Implementation.StudyTarget);
+            }
+            if (typeof(global::LightSwitchApplication.TargetType) == definitionType)
+            {
+                return typeof(global::LightSwitchApplication.Implementation.TargetType);
+            }
             return null;
         }
     }
@@ -191,6 +227,14 @@ namespace LightSwitchApplication.Implementation
             get
             {
                 return this.Authors;
+            }
+        }
+        
+        global::System.Collections.IEnumerable global::LightSwitchApplication.Article.DetailsClass.IImplementation.StudyTargets
+        {
+            get
+            {
+                return this.StudyTargets;
             }
         }
         
@@ -360,6 +404,167 @@ namespace LightSwitchApplication.Implementation
             if (this.__host != null)
             {
                 this.__host.RaisePropertyChanged("Article");
+            }
+        }
+        
+        #region IEntityImplementation Members
+        private global::Microsoft.LightSwitch.Internal.IEntityImplementationHost __host;
+        
+        global::Microsoft.LightSwitch.Internal.IEntityImplementationHost global::Microsoft.LightSwitch.Internal.IEntityImplementation.Host
+        {
+            get
+            {
+                return this.__host;
+            }
+        }
+        
+        void global::Microsoft.LightSwitch.Internal.IEntityImplementation.Initialize(global::Microsoft.LightSwitch.Internal.IEntityImplementationHost host)
+        {
+            this.__host = host;
+        }
+        
+        protected override void OnPropertyChanged(string propertyName)
+        {
+            base.OnPropertyChanged(propertyName);
+            if (this.__host != null)
+            {
+                this.__host.RaisePropertyChanged(propertyName);
+            }
+        }
+        #endregion
+    }
+    
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "12.1.0.0")]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    public partial class StudyDesign :
+        global::LightSwitchApplication.StudyDesign.DetailsClass.IImplementation,
+        global::Microsoft.LightSwitch.Internal.ICreatedModifiedPropertiesImplementation
+    
+    {
+    
+        #region IEntityImplementation Members
+        private global::Microsoft.LightSwitch.Internal.IEntityImplementationHost __host;
+        
+        global::Microsoft.LightSwitch.Internal.IEntityImplementationHost global::Microsoft.LightSwitch.Internal.IEntityImplementation.Host
+        {
+            get
+            {
+                return this.__host;
+            }
+        }
+        
+        void global::Microsoft.LightSwitch.Internal.IEntityImplementation.Initialize(global::Microsoft.LightSwitch.Internal.IEntityImplementationHost host)
+        {
+            this.__host = host;
+        }
+        
+        protected override void OnPropertyChanged(string propertyName)
+        {
+            base.OnPropertyChanged(propertyName);
+            if (this.__host != null)
+            {
+                this.__host.RaisePropertyChanged(propertyName);
+            }
+        }
+        #endregion
+    }
+    
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "12.1.0.0")]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    public partial class StudyTarget :
+        global::LightSwitchApplication.StudyTarget.DetailsClass.IImplementation,
+        global::Microsoft.LightSwitch.Internal.ICreatedModifiedPropertiesImplementation
+    
+    {
+    
+        global::Microsoft.LightSwitch.Internal.IEntityImplementation global::LightSwitchApplication.StudyTarget.DetailsClass.IImplementation.TargetType
+        {
+            get
+            {
+                return this.TargetType;
+            }
+            set
+            {
+                this.TargetType = (global::LightSwitchApplication.Implementation.TargetType)value;
+                if (this.__host != null)
+                {
+                    this.__host.RaisePropertyChanged("TargetType");
+                }
+            }
+        }
+        
+        global::Microsoft.LightSwitch.Internal.IEntityImplementation global::LightSwitchApplication.StudyTarget.DetailsClass.IImplementation.Article
+        {
+            get
+            {
+                return this.Article;
+            }
+            set
+            {
+                this.Article = (global::LightSwitchApplication.Implementation.Article)value;
+                if (this.__host != null)
+                {
+                    this.__host.RaisePropertyChanged("Article");
+                }
+            }
+        }
+        
+        partial void OnStudyTarget_TargetTypeChanged()
+        {
+            if (this.__host != null)
+            {
+                this.__host.RaisePropertyChanged("TargetType");
+            }
+        }
+        
+        partial void OnStudyTarget_ArticleChanged()
+        {
+            if (this.__host != null)
+            {
+                this.__host.RaisePropertyChanged("Article");
+            }
+        }
+        
+        #region IEntityImplementation Members
+        private global::Microsoft.LightSwitch.Internal.IEntityImplementationHost __host;
+        
+        global::Microsoft.LightSwitch.Internal.IEntityImplementationHost global::Microsoft.LightSwitch.Internal.IEntityImplementation.Host
+        {
+            get
+            {
+                return this.__host;
+            }
+        }
+        
+        void global::Microsoft.LightSwitch.Internal.IEntityImplementation.Initialize(global::Microsoft.LightSwitch.Internal.IEntityImplementationHost host)
+        {
+            this.__host = host;
+        }
+        
+        protected override void OnPropertyChanged(string propertyName)
+        {
+            base.OnPropertyChanged(propertyName);
+            if (this.__host != null)
+            {
+                this.__host.RaisePropertyChanged(propertyName);
+            }
+        }
+        #endregion
+    }
+    
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "12.1.0.0")]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    public partial class TargetType :
+        global::LightSwitchApplication.TargetType.DetailsClass.IImplementation,
+        global::Microsoft.LightSwitch.Internal.ICreatedModifiedPropertiesImplementation
+    
+    {
+    
+        global::System.Collections.IEnumerable global::LightSwitchApplication.TargetType.DetailsClass.IImplementation.StudyTargets
+        {
+            get
+            {
+                return this.StudyTargets;
             }
         }
         

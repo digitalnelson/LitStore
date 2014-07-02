@@ -127,6 +127,13 @@
     </_BuildFile>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="LitStore.DatabaseProject\LitStore.DatabaseProject.sqlproj">
+      <Name>LitStore.DatabaseProject</Name>
+      <Project>{411c6358-339a-4df5-ad6f-165faa309e33}</Project>
+      <Private>True</Private>
+      <Type>Database</Type>
+      <BuildReference>False</BuildReference>
+    </ProjectReference>
     <ProjectReference Include="LitStore.HTMLClient\LitStore.HTMLClient.jsproj">
       <Name>LitStore.HTMLClient</Name>
       <Project>{6142f560-fc1d-40ee-95a0-e4e636a90ebd}</Project>

@@ -56,5 +56,46 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="StudyDesigns">
+      <EntityTypeMapping TypeName="IsTypeOf(LightSwitchApplication.StudyDesign)">
+        <MappingFragment StoreEntitySet="StudyDesigns">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="SampleSize" ColumnName="SampleSize" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="Created" ColumnName="Created" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="Modified" ColumnName="Modified" />
+          <ScalarProperty Name="RowVersion" ColumnName="RowVersion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="StudyTargets">
+      <EntityTypeMapping TypeName="IsTypeOf(LightSwitchApplication.StudyTarget)">
+        <MappingFragment StoreEntitySet="StudyTargets">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="StudyTarget_TargetType" ColumnName="StudyTarget_TargetType" />
+          <ScalarProperty Name="StudyTarget_Article" ColumnName="StudyTarget_Article" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="Created" ColumnName="Created" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="Modified" ColumnName="Modified" />
+          <ScalarProperty Name="RowVersion" ColumnName="RowVersion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TargetTypes">
+      <EntityTypeMapping TypeName="IsTypeOf(LightSwitchApplication.TargetType)">
+        <MappingFragment StoreEntitySet="TargetTypes">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="Created" ColumnName="Created" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="Modified" ColumnName="Modified" />
+          <ScalarProperty Name="RowVersion" ColumnName="RowVersion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

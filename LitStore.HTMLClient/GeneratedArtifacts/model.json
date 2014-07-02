@@ -2181,6 +2181,180 @@
           "name": "LightSwitchServiceApplicationGroup"
         },
         {
+          "id": "StudyTarget*",
+          "name": "StudyTarget*",
+          "kind": "Enumerable",
+          "elementType": { "__id": "StudyTarget" }
+        },
+        {
+          "id": "CollectionView$StudyTarget",
+          "name": "CollectionView$StudyTarget",
+          "kind": "CollectionView",
+          "elementType": { "__id": "StudyTarget" },
+          "methods":
+          [
+            {
+              "id": "CollectionView$StudyTarget/Methods[addNew]",
+              "name": "addNew",
+              "returnType": { "__id": "StudyTarget" }
+            },
+            {
+              "id": "CollectionView$StudyTarget/Methods[addAndEditNew]",
+              "name": "addAndEditNew",
+              "returnType": { "__id": "StudyTarget" }
+            },
+            {
+              "id": "CollectionView$StudyTarget/Methods[showSearch]",
+              "name": "showSearch",
+              "returnType": { "__id": "StudyTarget" }
+            },
+            {
+              "id": "CollectionView$StudyTarget/Methods[editSelected]",
+              "name": "editSelected"
+            },
+            {
+              "id": "CollectionView$StudyTarget/Methods[deleteSelected]",
+              "name": "deleteSelected"
+            },
+            {
+              "id": "CollectionView$StudyTarget/Methods[removeSelected]",
+              "name": "removeSelected"
+            },
+            {
+              "id": "CollectionView$StudyTarget/Methods[refresh]",
+              "name": "refresh"
+            },
+            {
+              "id": "CollectionView$StudyTarget/Methods[viewSelected]",
+              "name": "viewSelected"
+            }
+          ],
+          "properties":
+          [
+            {
+              "id": "CollectionView$StudyTarget/Properties[selectedItem]",
+              "name": "selectedItem",
+              "propertyType": { "__id": "StudyTarget" }
+            }
+          ]
+        },
+        {
+          "id": "TargetType*",
+          "name": "TargetType*",
+          "kind": "Enumerable",
+          "elementType": { "__id": "TargetType" }
+        },
+        {
+          "id": "CollectionView$TargetType",
+          "name": "CollectionView$TargetType",
+          "kind": "CollectionView",
+          "elementType": { "__id": "TargetType" },
+          "methods":
+          [
+            {
+              "id": "CollectionView$TargetType/Methods[addNew]",
+              "name": "addNew",
+              "returnType": { "__id": "TargetType" }
+            },
+            {
+              "id": "CollectionView$TargetType/Methods[addAndEditNew]",
+              "name": "addAndEditNew",
+              "returnType": { "__id": "TargetType" }
+            },
+            {
+              "id": "CollectionView$TargetType/Methods[showSearch]",
+              "name": "showSearch",
+              "returnType": { "__id": "TargetType" }
+            },
+            {
+              "id": "CollectionView$TargetType/Methods[editSelected]",
+              "name": "editSelected"
+            },
+            {
+              "id": "CollectionView$TargetType/Methods[deleteSelected]",
+              "name": "deleteSelected"
+            },
+            {
+              "id": "CollectionView$TargetType/Methods[removeSelected]",
+              "name": "removeSelected"
+            },
+            {
+              "id": "CollectionView$TargetType/Methods[refresh]",
+              "name": "refresh"
+            },
+            {
+              "id": "CollectionView$TargetType/Methods[viewSelected]",
+              "name": "viewSelected"
+            }
+          ],
+          "properties":
+          [
+            {
+              "id": "CollectionView$TargetType/Properties[selectedItem]",
+              "name": "selectedItem",
+              "propertyType": { "__id": "TargetType" }
+            }
+          ]
+        },
+        {
+          "id": "StudyDesign*",
+          "name": "StudyDesign*",
+          "kind": "Enumerable",
+          "elementType": { "__id": "StudyDesign" }
+        },
+        {
+          "id": "CollectionView$StudyDesign",
+          "name": "CollectionView$StudyDesign",
+          "kind": "CollectionView",
+          "elementType": { "__id": "StudyDesign" },
+          "methods":
+          [
+            {
+              "id": "CollectionView$StudyDesign/Methods[addNew]",
+              "name": "addNew",
+              "returnType": { "__id": "StudyDesign" }
+            },
+            {
+              "id": "CollectionView$StudyDesign/Methods[addAndEditNew]",
+              "name": "addAndEditNew",
+              "returnType": { "__id": "StudyDesign" }
+            },
+            {
+              "id": "CollectionView$StudyDesign/Methods[showSearch]",
+              "name": "showSearch",
+              "returnType": { "__id": "StudyDesign" }
+            },
+            {
+              "id": "CollectionView$StudyDesign/Methods[editSelected]",
+              "name": "editSelected"
+            },
+            {
+              "id": "CollectionView$StudyDesign/Methods[deleteSelected]",
+              "name": "deleteSelected"
+            },
+            {
+              "id": "CollectionView$StudyDesign/Methods[removeSelected]",
+              "name": "removeSelected"
+            },
+            {
+              "id": "CollectionView$StudyDesign/Methods[refresh]",
+              "name": "refresh"
+            },
+            {
+              "id": "CollectionView$StudyDesign/Methods[viewSelected]",
+              "name": "viewSelected"
+            }
+          ],
+          "properties":
+          [
+            {
+              "id": "CollectionView$StudyDesign/Properties[selectedItem]",
+              "name": "selectedItem",
+              "propertyType": { "__id": "StudyDesign" }
+            }
+          ]
+        },
+        {
           "id": "Result*",
           "name": "Result*",
           "kind": "Enumerable",
@@ -2507,6 +2681,15 @@
               "toEnd": { "__id": "Article_Author/Ends[Author]" }
             },
             {
+              "id": "Article/Properties[StudyTargets]",
+              "name": "StudyTargets",
+              "association": { "__id": "StudyTarget_Article" },
+              "elementType": { "__id": "StudyTarget" },
+              "fromEnd": { "__id": "StudyTarget_Article/Ends[Article]" },
+              "propertyType": { "__id": "StudyTarget*" },
+              "toEnd": { "__id": "StudyTarget_Article/Ends[StudyTarget]" }
+            },
+            {
               "id": "Article/Properties[CreatedBy]",
               "name": "CreatedBy",
               "isReadOnly": true,
@@ -2708,6 +2891,26 @@
               ]
             },
             {
+              "id": "ApplicationData/Members[StudyTarget_Articles]",
+              "name": "StudyTarget_Articles",
+              "association": { "__id": "StudyTarget_Article" },
+              "ends":
+              [
+                {
+                  "properties": [ "StudyTarget_Article" ],
+                  "id": "ApplicationData/Members[StudyTarget_Articles]/Members[StudyTarget]",
+                  "name": "StudyTarget",
+                  "entitySet": { "__id": "ApplicationData/Members[StudyTargets]" }
+                },
+                {
+                  "properties": [ "Id" ],
+                  "id": "ApplicationData/Members[StudyTarget_Articles]/Members[Article]",
+                  "name": "Article",
+                  "entitySet": { "__id": "ApplicationData/Members[Articles]" }
+                }
+              ]
+            },
+            {
               "id": "ApplicationData/Members[Article_ArticleTypes]",
               "name": "Article_ArticleTypes",
               "association": { "__id": "Article_ArticleType" },
@@ -2724,6 +2927,26 @@
                   "id": "ApplicationData/Members[Article_ArticleTypes]/Members[ArticleType]",
                   "name": "ArticleType",
                   "entitySet": { "__id": "ApplicationData/Members[ArticleTypes]" }
+                }
+              ]
+            },
+            {
+              "id": "ApplicationData/Members[StudyTarget_TargetTypes]",
+              "name": "StudyTarget_TargetTypes",
+              "association": { "__id": "StudyTarget_TargetType" },
+              "ends":
+              [
+                {
+                  "properties": [ "StudyTarget_TargetType" ],
+                  "id": "ApplicationData/Members[StudyTarget_TargetTypes]/Members[StudyTarget]",
+                  "name": "StudyTarget",
+                  "entitySet": { "__id": "ApplicationData/Members[StudyTargets]" }
+                },
+                {
+                  "properties": [ "Id" ],
+                  "id": "ApplicationData/Members[StudyTarget_TargetTypes]/Members[TargetType]",
+                  "name": "TargetType",
+                  "entitySet": { "__id": "ApplicationData/Members[TargetTypes]" }
                 }
               ]
             }
@@ -2765,6 +2988,33 @@
               "canUpdate": true,
               "elementType": { "__id": "Result" },
               "entityType": { "__id": "Result" }
+            },
+            {
+              "id": "ApplicationData/Members[StudyDesigns]",
+              "name": "StudyDesigns",
+              "canDelete": true,
+              "canInsert": true,
+              "canUpdate": true,
+              "elementType": { "__id": "StudyDesign" },
+              "entityType": { "__id": "StudyDesign" }
+            },
+            {
+              "id": "ApplicationData/Members[StudyTargets]",
+              "name": "StudyTargets",
+              "canDelete": true,
+              "canInsert": true,
+              "canUpdate": true,
+              "elementType": { "__id": "StudyTarget" },
+              "entityType": { "__id": "StudyTarget" }
+            },
+            {
+              "id": "ApplicationData/Members[TargetTypes]",
+              "name": "TargetTypes",
+              "canDelete": true,
+              "canInsert": true,
+              "canUpdate": true,
+              "elementType": { "__id": "TargetType" },
+              "entityType": { "__id": "TargetType" }
             }
           ],
           "queryOperations":
@@ -2916,6 +3166,120 @@
               [
                 {
                   "id": "ApplicationData/Members[Results_SingleOrDefault]/Parameters[Id]",
+                  "name": "Id",
+                  "parameterType": { "__id": ":Int32?" }
+                }
+              ]
+            },
+            {
+              "id": "ApplicationData/Members[StudyDesigns_Single]",
+              "name": "StudyDesigns_Single",
+              "elementType": { "__id": "StudyDesign" },
+              "query": { "__id": "ApplicationData/Members[StudyDesigns_Single]" },
+              "returnType": { "__id": "StudyDesign" },
+              "source":
+              {
+                "member": { "__id": "ApplicationData/Members[StudyDesigns]" }
+              },
+              "parameters":
+              [
+                {
+                  "id": "ApplicationData/Members[StudyDesigns_Single]/Parameters[Id]",
+                  "name": "Id",
+                  "parameterType": { "__id": ":Int32?" }
+                }
+              ]
+            },
+            {
+              "id": "ApplicationData/Members[StudyDesigns_SingleOrDefault]",
+              "name": "StudyDesigns_SingleOrDefault",
+              "elementType": { "__id": "StudyDesign" },
+              "query": { "__id": "ApplicationData/Members[StudyDesigns_SingleOrDefault]" },
+              "returnType": { "__id": "StudyDesign" },
+              "source":
+              {
+                "member": { "__id": "ApplicationData/Members[StudyDesigns]" }
+              },
+              "parameters":
+              [
+                {
+                  "id": "ApplicationData/Members[StudyDesigns_SingleOrDefault]/Parameters[Id]",
+                  "name": "Id",
+                  "parameterType": { "__id": ":Int32?" }
+                }
+              ]
+            },
+            {
+              "id": "ApplicationData/Members[StudyTargets_Single]",
+              "name": "StudyTargets_Single",
+              "elementType": { "__id": "StudyTarget" },
+              "query": { "__id": "ApplicationData/Members[StudyTargets_Single]" },
+              "returnType": { "__id": "StudyTarget" },
+              "source":
+              {
+                "member": { "__id": "ApplicationData/Members[StudyTargets]" }
+              },
+              "parameters":
+              [
+                {
+                  "id": "ApplicationData/Members[StudyTargets_Single]/Parameters[Id]",
+                  "name": "Id",
+                  "parameterType": { "__id": ":Int32?" }
+                }
+              ]
+            },
+            {
+              "id": "ApplicationData/Members[StudyTargets_SingleOrDefault]",
+              "name": "StudyTargets_SingleOrDefault",
+              "elementType": { "__id": "StudyTarget" },
+              "query": { "__id": "ApplicationData/Members[StudyTargets_SingleOrDefault]" },
+              "returnType": { "__id": "StudyTarget" },
+              "source":
+              {
+                "member": { "__id": "ApplicationData/Members[StudyTargets]" }
+              },
+              "parameters":
+              [
+                {
+                  "id": "ApplicationData/Members[StudyTargets_SingleOrDefault]/Parameters[Id]",
+                  "name": "Id",
+                  "parameterType": { "__id": ":Int32?" }
+                }
+              ]
+            },
+            {
+              "id": "ApplicationData/Members[TargetTypes_Single]",
+              "name": "TargetTypes_Single",
+              "elementType": { "__id": "TargetType" },
+              "query": { "__id": "ApplicationData/Members[TargetTypes_Single]" },
+              "returnType": { "__id": "TargetType" },
+              "source":
+              {
+                "member": { "__id": "ApplicationData/Members[TargetTypes]" }
+              },
+              "parameters":
+              [
+                {
+                  "id": "ApplicationData/Members[TargetTypes_Single]/Parameters[Id]",
+                  "name": "Id",
+                  "parameterType": { "__id": ":Int32?" }
+                }
+              ]
+            },
+            {
+              "id": "ApplicationData/Members[TargetTypes_SingleOrDefault]",
+              "name": "TargetTypes_SingleOrDefault",
+              "elementType": { "__id": "TargetType" },
+              "query": { "__id": "ApplicationData/Members[TargetTypes_SingleOrDefault]" },
+              "returnType": { "__id": "TargetType" },
+              "source":
+              {
+                "member": { "__id": "ApplicationData/Members[TargetTypes]" }
+              },
+              "parameters":
+              [
+                {
+                  "id": "ApplicationData/Members[TargetTypes_SingleOrDefault]/Parameters[Id]",
                   "name": "Id",
                   "parameterType": { "__id": ":Int32?" }
                 }
@@ -3156,6 +3520,334 @@
               ":@Hidden": { },
               ":@UseForConcurrency": { },
               ":@NotSearchable": { }
+            }
+          ]
+        },
+        {
+          "__isEntityType": 1,
+          ":@SummaryProperty": { "property": { "__id": "StudyDesign/Properties[Id]" } },
+          "id": "StudyDesign",
+          "name": "StudyDesign",
+          ":@CreatedModifiedPropertiesEnabled": { },
+          "methods":
+          [
+            {
+              "id": "StudyDesign/Methods[deleteEntity]",
+              "name": "deleteEntity"
+            },
+            {
+              "id": "StudyDesign/Methods[edit]",
+              "name": "edit"
+            },
+            {
+              "id": "StudyDesign/Methods[view]",
+              "name": "view"
+            }
+          ],
+          "properties":
+          [
+            {
+              "__isKeyProperty": 1,
+              "id": "StudyDesign/Properties[Id]",
+              "name": "Id",
+              "isReadOnly": true,
+              "propertyType": { "__id": ":Int32" },
+              ":@Required": { },
+              ":@NotSearchable": { }
+            },
+            {
+              "id": "StudyDesign/Properties[SampleSize]",
+              "name": "SampleSize",
+              "propertyType": { "__id": ":Int32" },
+              ":@Required": { },
+              ":@NotSearchable": { }
+            },
+            {
+              "id": "StudyDesign/Properties[Type]",
+              "name": "Type",
+              "propertyType": { "__id": ":Int32" },
+              ":@Required": { },
+              ":@NotSearchable": { }
+            },
+            {
+              "id": "StudyDesign/Properties[CreatedBy]",
+              "name": "CreatedBy",
+              "isReadOnly": true,
+              "propertyType": { "__id": ":Person?" },
+              ":@NotSearchable": { },
+              ":@MaxLength":
+              {
+                "value": 255
+              }
+            },
+            {
+              "id": "StudyDesign/Properties[Created]",
+              "name": "Created",
+              "isReadOnly": true,
+              "propertyType": { "__id": ":DateTimeOffset?" },
+              ":@NotSearchable": { }
+            },
+            {
+              "id": "StudyDesign/Properties[ModifiedBy]",
+              "name": "ModifiedBy",
+              "isReadOnly": true,
+              "propertyType": { "__id": ":Person?" },
+              ":@NotSearchable": { },
+              ":@MaxLength":
+              {
+                "value": 255
+              }
+            },
+            {
+              "id": "StudyDesign/Properties[Modified]",
+              "name": "Modified",
+              "isReadOnly": true,
+              "propertyType": { "__id": ":DateTimeOffset?" },
+              ":@NotSearchable": { }
+            },
+            {
+              "id": "StudyDesign/Properties[RowVersion]",
+              "name": "RowVersion",
+              "isReadOnly": true,
+              "propertyType": { "__id": ":RowVersion" },
+              ":@Hidden": { },
+              ":@UseForConcurrency": { },
+              ":@NotSearchable": { }
+            }
+          ]
+        },
+        {
+          "__isEntityType": 1,
+          ":@SummaryProperty": { "property": { "__id": "TargetType/Properties[Description]" } },
+          "id": "TargetType",
+          "name": "TargetType",
+          ":@CreatedModifiedPropertiesEnabled": { },
+          "methods":
+          [
+            {
+              "id": "TargetType/Methods[deleteEntity]",
+              "name": "deleteEntity"
+            },
+            {
+              "id": "TargetType/Methods[edit]",
+              "name": "edit"
+            },
+            {
+              "id": "TargetType/Methods[view]",
+              "name": "view"
+            }
+          ],
+          "properties":
+          [
+            {
+              "__isKeyProperty": 1,
+              "id": "TargetType/Properties[Id]",
+              "name": "Id",
+              "isReadOnly": true,
+              "propertyType": { "__id": ":Int32" },
+              ":@Required": { },
+              ":@NotSearchable": { }
+            },
+            {
+              "id": "TargetType/Properties[Description]",
+              "name": "Description",
+              "propertyType": { "__id": ":String" },
+              ":@Required": { },
+              ":@MaxLength":
+              {
+                "value": 255
+              }
+            },
+            {
+              "id": "TargetType/Properties[StudyTargets]",
+              "name": "StudyTargets",
+              "association": { "__id": "StudyTarget_TargetType" },
+              "elementType": { "__id": "StudyTarget" },
+              "fromEnd": { "__id": "StudyTarget_TargetType/Ends[TargetType]" },
+              "propertyType": { "__id": "StudyTarget*" },
+              "toEnd": { "__id": "StudyTarget_TargetType/Ends[StudyTarget]" }
+            },
+            {
+              "id": "TargetType/Properties[CreatedBy]",
+              "name": "CreatedBy",
+              "isReadOnly": true,
+              "propertyType": { "__id": ":Person?" },
+              ":@NotSearchable": { },
+              ":@MaxLength":
+              {
+                "value": 255
+              }
+            },
+            {
+              "id": "TargetType/Properties[Created]",
+              "name": "Created",
+              "isReadOnly": true,
+              "propertyType": { "__id": ":DateTimeOffset?" },
+              ":@NotSearchable": { }
+            },
+            {
+              "id": "TargetType/Properties[ModifiedBy]",
+              "name": "ModifiedBy",
+              "isReadOnly": true,
+              "propertyType": { "__id": ":Person?" },
+              ":@NotSearchable": { },
+              ":@MaxLength":
+              {
+                "value": 255
+              }
+            },
+            {
+              "id": "TargetType/Properties[Modified]",
+              "name": "Modified",
+              "isReadOnly": true,
+              "propertyType": { "__id": ":DateTimeOffset?" },
+              ":@NotSearchable": { }
+            },
+            {
+              "id": "TargetType/Properties[RowVersion]",
+              "name": "RowVersion",
+              "isReadOnly": true,
+              "propertyType": { "__id": ":RowVersion" },
+              ":@Hidden": { },
+              ":@UseForConcurrency": { },
+              ":@NotSearchable": { }
+            }
+          ]
+        },
+        {
+          "__isEntityType": 1,
+          ":@SummaryProperty": { "property": { "__id": "StudyTarget/Properties[Id]" } },
+          "id": "StudyTarget",
+          "name": "StudyTarget",
+          ":@CreatedModifiedPropertiesEnabled": { },
+          "methods":
+          [
+            {
+              "id": "StudyTarget/Methods[deleteEntity]",
+              "name": "deleteEntity"
+            },
+            {
+              "id": "StudyTarget/Methods[edit]",
+              "name": "edit"
+            },
+            {
+              "id": "StudyTarget/Methods[view]",
+              "name": "view"
+            }
+          ],
+          "properties":
+          [
+            {
+              "__isKeyProperty": 1,
+              "id": "StudyTarget/Properties[Id]",
+              "name": "Id",
+              "isReadOnly": true,
+              "propertyType": { "__id": ":Int32" },
+              ":@Required": { },
+              ":@NotSearchable": { }
+            },
+            {
+              "id": "StudyTarget/Properties[TargetType]",
+              "name": "TargetType",
+              "association": { "__id": "StudyTarget_TargetType" },
+              "elementType": { "__id": "TargetType" },
+              "fromEnd": { "__id": "StudyTarget_TargetType/Ends[StudyTarget]" },
+              "propertyType": { "__id": "TargetType" },
+              "toEnd": { "__id": "StudyTarget_TargetType/Ends[TargetType]" }
+            },
+            {
+              "id": "StudyTarget/Properties[Article]",
+              "name": "Article",
+              "association": { "__id": "StudyTarget_Article" },
+              "elementType": { "__id": "Article" },
+              "fromEnd": { "__id": "StudyTarget_Article/Ends[StudyTarget]" },
+              "propertyType": { "__id": "Article" },
+              "toEnd": { "__id": "StudyTarget_Article/Ends[Article]" }
+            },
+            {
+              "id": "StudyTarget/Properties[CreatedBy]",
+              "name": "CreatedBy",
+              "isReadOnly": true,
+              "propertyType": { "__id": ":Person?" },
+              ":@NotSearchable": { },
+              ":@MaxLength":
+              {
+                "value": 255
+              }
+            },
+            {
+              "id": "StudyTarget/Properties[Created]",
+              "name": "Created",
+              "isReadOnly": true,
+              "propertyType": { "__id": ":DateTimeOffset?" },
+              ":@NotSearchable": { }
+            },
+            {
+              "id": "StudyTarget/Properties[ModifiedBy]",
+              "name": "ModifiedBy",
+              "isReadOnly": true,
+              "propertyType": { "__id": ":Person?" },
+              ":@NotSearchable": { },
+              ":@MaxLength":
+              {
+                "value": 255
+              }
+            },
+            {
+              "id": "StudyTarget/Properties[Modified]",
+              "name": "Modified",
+              "isReadOnly": true,
+              "propertyType": { "__id": ":DateTimeOffset?" },
+              ":@NotSearchable": { }
+            },
+            {
+              "id": "StudyTarget/Properties[RowVersion]",
+              "name": "RowVersion",
+              "isReadOnly": true,
+              "propertyType": { "__id": ":RowVersion" },
+              ":@Hidden": { },
+              ":@UseForConcurrency": { },
+              ":@NotSearchable": { }
+            }
+          ]
+        },
+        {
+          "id": "StudyTarget_TargetType",
+          "name": "StudyTarget_TargetType",
+          "ends":
+          [
+            {
+              "id": "StudyTarget_TargetType/Ends[StudyTarget]",
+              "name": "StudyTarget",
+              "multiplicity": "Many",
+              "entityType": { "__id": "StudyTarget" }
+            },
+            {
+              "id": "StudyTarget_TargetType/Ends[TargetType]",
+              "name": "TargetType",
+              "multiplicity": "One",
+              "entityType": { "__id": "TargetType" },
+              ":@DeleteRule": { "action": "Restrict" }
+            }
+          ]
+        },
+        {
+          "id": "StudyTarget_Article",
+          "name": "StudyTarget_Article",
+          "ends":
+          [
+            {
+              "id": "StudyTarget_Article/Ends[StudyTarget]",
+              "name": "StudyTarget",
+              "multiplicity": "Many",
+              "entityType": { "__id": "StudyTarget" }
+            },
+            {
+              "id": "StudyTarget_Article/Ends[Article]",
+              "name": "Article",
+              "multiplicity": "One",
+              "entityType": { "__id": "Article" },
+              ":@DeleteRule": { "action": "Restrict" }
             }
           ]
         },

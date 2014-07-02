@@ -21,7 +21,9 @@ using System.Xml.Serialization;
 
 [assembly: EdmRelationshipAttribute("LightSwitchApplication", "Result_Article", "Article", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(LightSwitchApplication.Implementation.Article), "Result", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(LightSwitchApplication.Implementation.Result), true)]
 [assembly: EdmRelationshipAttribute("LightSwitchApplication", "Article_Author", "Article", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(LightSwitchApplication.Implementation.Article), "Author", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(LightSwitchApplication.Implementation.Author), true)]
+[assembly: EdmRelationshipAttribute("LightSwitchApplication", "StudyTarget_Article", "Article", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(LightSwitchApplication.Implementation.Article), "StudyTarget", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(LightSwitchApplication.Implementation.StudyTarget), true)]
 [assembly: EdmRelationshipAttribute("LightSwitchApplication", "Article_ArticleType", "ArticleType", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(LightSwitchApplication.Implementation.ArticleType), "Article", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(LightSwitchApplication.Implementation.Article), true)]
+[assembly: EdmRelationshipAttribute("LightSwitchApplication", "StudyTarget_TargetType", "TargetType", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(LightSwitchApplication.Implementation.TargetType), "StudyTarget", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(LightSwitchApplication.Implementation.StudyTarget), true)]
 
 #endregion
 
@@ -133,6 +135,54 @@ namespace LightSwitchApplication.Implementation
             }
         }
         private ObjectSet<Result> _Results;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        public ObjectSet<StudyDesign> StudyDesigns
+        {
+            get
+            {
+                if ((_StudyDesigns == null))
+                {
+                    _StudyDesigns = base.CreateObjectSet<StudyDesign>("StudyDesigns");
+                }
+                return _StudyDesigns;
+            }
+        }
+        private ObjectSet<StudyDesign> _StudyDesigns;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        public ObjectSet<StudyTarget> StudyTargets
+        {
+            get
+            {
+                if ((_StudyTargets == null))
+                {
+                    _StudyTargets = base.CreateObjectSet<StudyTarget>("StudyTargets");
+                }
+                return _StudyTargets;
+            }
+        }
+        private ObjectSet<StudyTarget> _StudyTargets;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        public ObjectSet<TargetType> TargetTypes
+        {
+            get
+            {
+                if ((_TargetTypes == null))
+                {
+                    _TargetTypes = base.CreateObjectSet<TargetType>("TargetTypes");
+                }
+                return _TargetTypes;
+            }
+        }
+        private ObjectSet<TargetType> _TargetTypes;
 
         #endregion
 
@@ -168,6 +218,30 @@ namespace LightSwitchApplication.Implementation
         public void AddToResults(Result result)
         {
             base.AddObject("Results", result);
+        }
+    
+        /// <summary>
+        /// Deprecated Method for adding a new object to the StudyDesigns EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddToStudyDesigns(StudyDesign studyDesign)
+        {
+            base.AddObject("StudyDesigns", studyDesign);
+        }
+    
+        /// <summary>
+        /// Deprecated Method for adding a new object to the StudyTargets EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddToStudyTargets(StudyTarget studyTarget)
+        {
+            base.AddObject("StudyTargets", studyTarget);
+        }
+    
+        /// <summary>
+        /// Deprecated Method for adding a new object to the TargetTypes EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddToTargetTypes(TargetType targetType)
+        {
+            base.AddObject("TargetTypes", targetType);
         }
 
         #endregion
@@ -539,6 +613,28 @@ namespace LightSwitchApplication.Implementation
                 if ((value != null))
                 {
                     ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Author>("LightSwitchApplication.Article_Author", "Author", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("LightSwitchApplication", "StudyTarget_Article", "StudyTarget")]
+        public EntityCollection<StudyTarget> StudyTargets
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<StudyTarget>("LightSwitchApplication.StudyTarget_Article", "StudyTarget");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<StudyTarget>("LightSwitchApplication.StudyTarget_Article", "StudyTarget", value);
                 }
             }
         }
@@ -1264,6 +1360,779 @@ namespace LightSwitchApplication.Implementation
                 if ((value != null))
                 {
                     ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Article>("LightSwitchApplication.Result_Article", "Article", value);
+                }
+            }
+        }
+
+        #endregion
+
+    }
+    
+    /// <summary>
+    /// No Metadata Documentation available.
+    /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="LightSwitchApplication", Name="StudyDesign")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class StudyDesign : EntityObject
+    {
+        #region Factory Method
+    
+        /// <summary>
+        /// Create a new StudyDesign object.
+        /// </summary>
+        /// <param name="id">Initial value of the Id property.</param>
+        /// <param name="sampleSize">Initial value of the SampleSize property.</param>
+        /// <param name="type">Initial value of the Type property.</param>
+        /// <param name="rowVersion">Initial value of the RowVersion property.</param>
+        public static StudyDesign CreateStudyDesign(global::System.Int32 id, global::System.Int32 sampleSize, global::System.Int32 type, global::System.Byte[] rowVersion)
+        {
+            StudyDesign studyDesign = new StudyDesign();
+            studyDesign.Id = id;
+            studyDesign.SampleSize = sampleSize;
+            studyDesign.Type = type;
+            studyDesign.RowVersion = rowVersion;
+            return studyDesign;
+        }
+
+        #endregion
+
+        #region Primitive Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 Id
+        {
+            get
+            {
+                return _Id;
+            }
+            set
+            {
+                if (_Id != value)
+                {
+                    OnIdChanging(value);
+                    ReportPropertyChanging("Id");
+                    _Id = value;
+                    ReportPropertyChanged("Id");
+                    OnIdChanged();
+                }
+            }
+        }
+        private global::System.Int32 _Id;
+        partial void OnIdChanging(global::System.Int32 value);
+        partial void OnIdChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 SampleSize
+        {
+            get
+            {
+                return _SampleSize;
+            }
+            set
+            {
+                OnSampleSizeChanging(value);
+                ReportPropertyChanging("SampleSize");
+                _SampleSize = value;
+                ReportPropertyChanged("SampleSize");
+                OnSampleSizeChanged();
+            }
+        }
+        private global::System.Int32 _SampleSize;
+        partial void OnSampleSizeChanging(global::System.Int32 value);
+        partial void OnSampleSizeChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 Type
+        {
+            get
+            {
+                return _Type;
+            }
+            set
+            {
+                OnTypeChanging(value);
+                ReportPropertyChanging("Type");
+                _Type = value;
+                ReportPropertyChanged("Type");
+                OnTypeChanged();
+            }
+        }
+        private global::System.Int32 _Type;
+        partial void OnTypeChanging(global::System.Int32 value);
+        partial void OnTypeChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String CreatedBy
+        {
+            get
+            {
+                return _CreatedBy;
+            }
+            set
+            {
+                OnCreatedByChanging(value);
+                ReportPropertyChanging("CreatedBy");
+                _CreatedBy = value;
+                ReportPropertyChanged("CreatedBy");
+                OnCreatedByChanged();
+            }
+        }
+        private global::System.String _CreatedBy;
+        partial void OnCreatedByChanging(global::System.String value);
+        partial void OnCreatedByChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.DateTimeOffset> Created
+        {
+            get
+            {
+                return _Created;
+            }
+            set
+            {
+                OnCreatedChanging(value);
+                ReportPropertyChanging("Created");
+                _Created = value;
+                ReportPropertyChanged("Created");
+                OnCreatedChanged();
+            }
+        }
+        private Nullable<global::System.DateTimeOffset> _Created;
+        partial void OnCreatedChanging(Nullable<global::System.DateTimeOffset> value);
+        partial void OnCreatedChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String ModifiedBy
+        {
+            get
+            {
+                return _ModifiedBy;
+            }
+            set
+            {
+                OnModifiedByChanging(value);
+                ReportPropertyChanging("ModifiedBy");
+                _ModifiedBy = value;
+                ReportPropertyChanged("ModifiedBy");
+                OnModifiedByChanged();
+            }
+        }
+        private global::System.String _ModifiedBy;
+        partial void OnModifiedByChanging(global::System.String value);
+        partial void OnModifiedByChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.DateTimeOffset> Modified
+        {
+            get
+            {
+                return _Modified;
+            }
+            set
+            {
+                OnModifiedChanging(value);
+                ReportPropertyChanging("Modified");
+                _Modified = value;
+                ReportPropertyChanged("Modified");
+                OnModifiedChanged();
+            }
+        }
+        private Nullable<global::System.DateTimeOffset> _Modified;
+        partial void OnModifiedChanging(Nullable<global::System.DateTimeOffset> value);
+        partial void OnModifiedChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Byte[] RowVersion
+        {
+            get
+            {
+                return StructuralObject.GetValidValue(_RowVersion);
+            }
+            set
+            {
+                OnRowVersionChanging(value);
+                ReportPropertyChanging("RowVersion");
+                _RowVersion = value;
+                ReportPropertyChanged("RowVersion");
+                OnRowVersionChanged();
+            }
+        }
+        private global::System.Byte[] _RowVersion;
+        partial void OnRowVersionChanging(global::System.Byte[] value);
+        partial void OnRowVersionChanged();
+
+        #endregion
+
+    
+    }
+    
+    /// <summary>
+    /// No Metadata Documentation available.
+    /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="LightSwitchApplication", Name="StudyTarget")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class StudyTarget : EntityObject
+    {
+        #region Factory Method
+    
+        /// <summary>
+        /// Create a new StudyTarget object.
+        /// </summary>
+        /// <param name="id">Initial value of the Id property.</param>
+        /// <param name="studyTarget_TargetType">Initial value of the StudyTarget_TargetType property.</param>
+        /// <param name="studyTarget_Article">Initial value of the StudyTarget_Article property.</param>
+        /// <param name="rowVersion">Initial value of the RowVersion property.</param>
+        public static StudyTarget CreateStudyTarget(global::System.Int32 id, global::System.Int32 studyTarget_TargetType, global::System.Int32 studyTarget_Article, global::System.Byte[] rowVersion)
+        {
+            StudyTarget studyTarget = new StudyTarget();
+            studyTarget.Id = id;
+            studyTarget.StudyTarget_TargetType = studyTarget_TargetType;
+            studyTarget.StudyTarget_Article = studyTarget_Article;
+            studyTarget.RowVersion = rowVersion;
+            return studyTarget;
+        }
+
+        #endregion
+
+        #region Primitive Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 Id
+        {
+            get
+            {
+                return _Id;
+            }
+            set
+            {
+                if (_Id != value)
+                {
+                    OnIdChanging(value);
+                    ReportPropertyChanging("Id");
+                    _Id = value;
+                    ReportPropertyChanged("Id");
+                    OnIdChanged();
+                }
+            }
+        }
+        private global::System.Int32 _Id;
+        partial void OnIdChanging(global::System.Int32 value);
+        partial void OnIdChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 StudyTarget_TargetType
+        {
+            get
+            {
+                return _StudyTarget_TargetType;
+            }
+            set
+            {
+                OnStudyTarget_TargetTypeChanging(value);
+                ReportPropertyChanging("StudyTarget_TargetType");
+                _StudyTarget_TargetType = value;
+                ReportPropertyChanged("StudyTarget_TargetType");
+                OnStudyTarget_TargetTypeChanged();
+            }
+        }
+        private global::System.Int32 _StudyTarget_TargetType;
+        partial void OnStudyTarget_TargetTypeChanging(global::System.Int32 value);
+        partial void OnStudyTarget_TargetTypeChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 StudyTarget_Article
+        {
+            get
+            {
+                return _StudyTarget_Article;
+            }
+            set
+            {
+                OnStudyTarget_ArticleChanging(value);
+                ReportPropertyChanging("StudyTarget_Article");
+                _StudyTarget_Article = value;
+                ReportPropertyChanged("StudyTarget_Article");
+                OnStudyTarget_ArticleChanged();
+            }
+        }
+        private global::System.Int32 _StudyTarget_Article;
+        partial void OnStudyTarget_ArticleChanging(global::System.Int32 value);
+        partial void OnStudyTarget_ArticleChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String CreatedBy
+        {
+            get
+            {
+                return _CreatedBy;
+            }
+            set
+            {
+                OnCreatedByChanging(value);
+                ReportPropertyChanging("CreatedBy");
+                _CreatedBy = value;
+                ReportPropertyChanged("CreatedBy");
+                OnCreatedByChanged();
+            }
+        }
+        private global::System.String _CreatedBy;
+        partial void OnCreatedByChanging(global::System.String value);
+        partial void OnCreatedByChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.DateTimeOffset> Created
+        {
+            get
+            {
+                return _Created;
+            }
+            set
+            {
+                OnCreatedChanging(value);
+                ReportPropertyChanging("Created");
+                _Created = value;
+                ReportPropertyChanged("Created");
+                OnCreatedChanged();
+            }
+        }
+        private Nullable<global::System.DateTimeOffset> _Created;
+        partial void OnCreatedChanging(Nullable<global::System.DateTimeOffset> value);
+        partial void OnCreatedChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String ModifiedBy
+        {
+            get
+            {
+                return _ModifiedBy;
+            }
+            set
+            {
+                OnModifiedByChanging(value);
+                ReportPropertyChanging("ModifiedBy");
+                _ModifiedBy = value;
+                ReportPropertyChanged("ModifiedBy");
+                OnModifiedByChanged();
+            }
+        }
+        private global::System.String _ModifiedBy;
+        partial void OnModifiedByChanging(global::System.String value);
+        partial void OnModifiedByChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.DateTimeOffset> Modified
+        {
+            get
+            {
+                return _Modified;
+            }
+            set
+            {
+                OnModifiedChanging(value);
+                ReportPropertyChanging("Modified");
+                _Modified = value;
+                ReportPropertyChanged("Modified");
+                OnModifiedChanged();
+            }
+        }
+        private Nullable<global::System.DateTimeOffset> _Modified;
+        partial void OnModifiedChanging(Nullable<global::System.DateTimeOffset> value);
+        partial void OnModifiedChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Byte[] RowVersion
+        {
+            get
+            {
+                return StructuralObject.GetValidValue(_RowVersion);
+            }
+            set
+            {
+                OnRowVersionChanging(value);
+                ReportPropertyChanging("RowVersion");
+                _RowVersion = value;
+                ReportPropertyChanged("RowVersion");
+                OnRowVersionChanged();
+            }
+        }
+        private global::System.Byte[] _RowVersion;
+        partial void OnRowVersionChanging(global::System.Byte[] value);
+        partial void OnRowVersionChanged();
+
+        #endregion
+
+    
+        #region Navigation Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("LightSwitchApplication", "StudyTarget_TargetType", "TargetType")]
+        public TargetType TargetType
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<TargetType>("LightSwitchApplication.StudyTarget_TargetType", "TargetType").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<TargetType>("LightSwitchApplication.StudyTarget_TargetType", "TargetType").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<TargetType> TargetTypeReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<TargetType>("LightSwitchApplication.StudyTarget_TargetType", "TargetType");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<TargetType>("LightSwitchApplication.StudyTarget_TargetType", "TargetType", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("LightSwitchApplication", "StudyTarget_Article", "Article")]
+        public Article Article
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Article>("LightSwitchApplication.StudyTarget_Article", "Article").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Article>("LightSwitchApplication.StudyTarget_Article", "Article").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<Article> ArticleReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Article>("LightSwitchApplication.StudyTarget_Article", "Article");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Article>("LightSwitchApplication.StudyTarget_Article", "Article", value);
+                }
+            }
+        }
+
+        #endregion
+
+    }
+    
+    /// <summary>
+    /// No Metadata Documentation available.
+    /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="LightSwitchApplication", Name="TargetType")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class TargetType : EntityObject
+    {
+        #region Factory Method
+    
+        /// <summary>
+        /// Create a new TargetType object.
+        /// </summary>
+        /// <param name="id">Initial value of the Id property.</param>
+        /// <param name="description">Initial value of the Description property.</param>
+        /// <param name="rowVersion">Initial value of the RowVersion property.</param>
+        public static TargetType CreateTargetType(global::System.Int32 id, global::System.String description, global::System.Byte[] rowVersion)
+        {
+            TargetType targetType = new TargetType();
+            targetType.Id = id;
+            targetType.Description = description;
+            targetType.RowVersion = rowVersion;
+            return targetType;
+        }
+
+        #endregion
+
+        #region Primitive Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 Id
+        {
+            get
+            {
+                return _Id;
+            }
+            set
+            {
+                if (_Id != value)
+                {
+                    OnIdChanging(value);
+                    ReportPropertyChanging("Id");
+                    _Id = value;
+                    ReportPropertyChanged("Id");
+                    OnIdChanged();
+                }
+            }
+        }
+        private global::System.Int32 _Id;
+        partial void OnIdChanging(global::System.Int32 value);
+        partial void OnIdChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String Description
+        {
+            get
+            {
+                return _Description;
+            }
+            set
+            {
+                OnDescriptionChanging(value);
+                ReportPropertyChanging("Description");
+                _Description = value;
+                ReportPropertyChanged("Description");
+                OnDescriptionChanged();
+            }
+        }
+        private global::System.String _Description;
+        partial void OnDescriptionChanging(global::System.String value);
+        partial void OnDescriptionChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String CreatedBy
+        {
+            get
+            {
+                return _CreatedBy;
+            }
+            set
+            {
+                OnCreatedByChanging(value);
+                ReportPropertyChanging("CreatedBy");
+                _CreatedBy = value;
+                ReportPropertyChanged("CreatedBy");
+                OnCreatedByChanged();
+            }
+        }
+        private global::System.String _CreatedBy;
+        partial void OnCreatedByChanging(global::System.String value);
+        partial void OnCreatedByChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.DateTimeOffset> Created
+        {
+            get
+            {
+                return _Created;
+            }
+            set
+            {
+                OnCreatedChanging(value);
+                ReportPropertyChanging("Created");
+                _Created = value;
+                ReportPropertyChanged("Created");
+                OnCreatedChanged();
+            }
+        }
+        private Nullable<global::System.DateTimeOffset> _Created;
+        partial void OnCreatedChanging(Nullable<global::System.DateTimeOffset> value);
+        partial void OnCreatedChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String ModifiedBy
+        {
+            get
+            {
+                return _ModifiedBy;
+            }
+            set
+            {
+                OnModifiedByChanging(value);
+                ReportPropertyChanging("ModifiedBy");
+                _ModifiedBy = value;
+                ReportPropertyChanged("ModifiedBy");
+                OnModifiedByChanged();
+            }
+        }
+        private global::System.String _ModifiedBy;
+        partial void OnModifiedByChanging(global::System.String value);
+        partial void OnModifiedByChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.DateTimeOffset> Modified
+        {
+            get
+            {
+                return _Modified;
+            }
+            set
+            {
+                OnModifiedChanging(value);
+                ReportPropertyChanging("Modified");
+                _Modified = value;
+                ReportPropertyChanged("Modified");
+                OnModifiedChanged();
+            }
+        }
+        private Nullable<global::System.DateTimeOffset> _Modified;
+        partial void OnModifiedChanging(Nullable<global::System.DateTimeOffset> value);
+        partial void OnModifiedChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Byte[] RowVersion
+        {
+            get
+            {
+                return StructuralObject.GetValidValue(_RowVersion);
+            }
+            set
+            {
+                OnRowVersionChanging(value);
+                ReportPropertyChanging("RowVersion");
+                _RowVersion = value;
+                ReportPropertyChanged("RowVersion");
+                OnRowVersionChanged();
+            }
+        }
+        private global::System.Byte[] _RowVersion;
+        partial void OnRowVersionChanging(global::System.Byte[] value);
+        partial void OnRowVersionChanged();
+
+        #endregion
+
+    
+        #region Navigation Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("LightSwitchApplication", "StudyTarget_TargetType", "StudyTarget")]
+        public EntityCollection<StudyTarget> StudyTargets
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<StudyTarget>("LightSwitchApplication.StudyTarget_TargetType", "StudyTarget");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<StudyTarget>("LightSwitchApplication.StudyTarget_TargetType", "StudyTarget", value);
                 }
             }
         }

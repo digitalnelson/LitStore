@@ -9,6 +9,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LitStore.Server", "LitStore
 EndProject
 Project("{262852C6-CD72-467D-83FE-5EEB1973A190}") = "LitStore.HTMLClient", "LitStore.HTMLClient\LitStore.HTMLClient.jsproj", "{6142F560-FC1D-40EE-95A0-E4E636A90EBD}"
 EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "LitStore.DatabaseProject", "LitStore.DatabaseProject\LitStore.DatabaseProject.sqlproj", "{411C6358-339A-4DF5-AD6F-165FAA309E33}"
+	ProjectSection(ProjectDependencies) = postProject
+		{4BC1DB62-B9F9-4067-839C-00984B9B0DEE} = {4BC1DB62-B9F9-4067-839C-00984B9B0DEE}
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +32,12 @@ Global
 		{6142F560-FC1D-40EE-95A0-E4E636A90EBD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6142F560-FC1D-40EE-95A0-E4E636A90EBD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6142F560-FC1D-40EE-95A0-E4E636A90EBD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{411C6358-339A-4DF5-AD6F-165FAA309E33}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{411C6358-339A-4DF5-AD6F-165FAA309E33}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{411C6358-339A-4DF5-AD6F-165FAA309E33}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{411C6358-339A-4DF5-AD6F-165FAA309E33}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{411C6358-339A-4DF5-AD6F-165FAA309E33}.Release|Any CPU.Build.0 = Release|Any CPU
+		{411C6358-339A-4DF5-AD6F-165FAA309E33}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

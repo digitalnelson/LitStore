@@ -17,6 +17,7 @@
     <NavigationProperty Name="Results" Relationship="LightSwitchApplication.Result_Article" ToRole="Result" FromRole="Article" />
     <NavigationProperty Name="ArticleType" Relationship="LightSwitchApplication.Article_ArticleType" ToRole="ArticleType" FromRole="Article" />
     <NavigationProperty Name="Authors" Relationship="LightSwitchApplication.Article_Author" ToRole="Author" FromRole="Article" />
+    <NavigationProperty Name="StudyTargets" Relationship="LightSwitchApplication.StudyTarget_Article" ToRole="StudyTarget" FromRole="Article" />
   </EntityType>
   <EntityType Name="ArticleType">
     <Key>
@@ -57,6 +58,47 @@
     <Property Name="RowVersion" Type="Edm.Binary" Nullable="false" ConcurrencyMode="Fixed" annotation:StoreGeneratedPattern="Computed" />
     <NavigationProperty Name="Article" Relationship="LightSwitchApplication.Result_Article" ToRole="Article" FromRole="Result" />
   </EntityType>
+  <EntityType Name="StudyDesign">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Edm.Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SampleSize" Type="Edm.Int32" Nullable="false" />
+    <Property Name="Type" Type="Edm.Int32" Nullable="false" />
+    <Property Name="CreatedBy" Type="Edm.String" MaxLength="255" />
+    <Property Name="Created" Type="Edm.DateTimeOffset" />
+    <Property Name="ModifiedBy" Type="Edm.String" MaxLength="255" />
+    <Property Name="Modified" Type="Edm.DateTimeOffset" />
+    <Property Name="RowVersion" Type="Edm.Binary" Nullable="false" ConcurrencyMode="Fixed" annotation:StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <EntityType Name="StudyTarget">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Edm.Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="StudyTarget_TargetType" Type="Edm.Int32" Nullable="false" />
+    <Property Name="StudyTarget_Article" Type="Edm.Int32" Nullable="false" />
+    <Property Name="CreatedBy" Type="Edm.String" MaxLength="255" />
+    <Property Name="Created" Type="Edm.DateTimeOffset" />
+    <Property Name="ModifiedBy" Type="Edm.String" MaxLength="255" />
+    <Property Name="Modified" Type="Edm.DateTimeOffset" />
+    <Property Name="RowVersion" Type="Edm.Binary" Nullable="false" ConcurrencyMode="Fixed" annotation:StoreGeneratedPattern="Computed" />
+    <NavigationProperty Name="TargetType" Relationship="LightSwitchApplication.StudyTarget_TargetType" ToRole="TargetType" FromRole="StudyTarget" />
+    <NavigationProperty Name="Article" Relationship="LightSwitchApplication.StudyTarget_Article" ToRole="Article" FromRole="StudyTarget" />
+  </EntityType>
+  <EntityType Name="TargetType">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Edm.Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Description" Type="Edm.String" Nullable="false" MaxLength="255" />
+    <Property Name="CreatedBy" Type="Edm.String" MaxLength="255" />
+    <Property Name="Created" Type="Edm.DateTimeOffset" />
+    <Property Name="ModifiedBy" Type="Edm.String" MaxLength="255" />
+    <Property Name="Modified" Type="Edm.DateTimeOffset" />
+    <Property Name="RowVersion" Type="Edm.Binary" Nullable="false" ConcurrencyMode="Fixed" annotation:StoreGeneratedPattern="Computed" />
+    <NavigationProperty Name="StudyTargets" Relationship="LightSwitchApplication.StudyTarget_TargetType" ToRole="StudyTarget" FromRole="TargetType" />
+  </EntityType>
   <Association Name="Result_Article">
     <End Role="Article" Type="LightSwitchApplication.Article" Multiplicity="1" />
     <End Role="Result" Type="LightSwitchApplication.Result" Multiplicity="*" />
@@ -81,6 +123,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="StudyTarget_Article">
+    <End Role="Article" Type="LightSwitchApplication.Article" Multiplicity="1" />
+    <End Role="StudyTarget" Type="LightSwitchApplication.StudyTarget" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Article">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="StudyTarget">
+        <PropertyRef Name="StudyTarget_Article" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="Article_ArticleType">
     <End Role="ArticleType" Type="LightSwitchApplication.ArticleType" Multiplicity="1" />
     <End Role="Article" Type="LightSwitchApplication.Article" Multiplicity="*" />
@@ -93,11 +147,26 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="StudyTarget_TargetType">
+    <End Role="TargetType" Type="LightSwitchApplication.TargetType" Multiplicity="1" />
+    <End Role="StudyTarget" Type="LightSwitchApplication.StudyTarget" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TargetType">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="StudyTarget">
+        <PropertyRef Name="StudyTarget_TargetType" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <EntityContainer Name="ApplicationData" m:IsDefaultEntityContainer="true">
     <EntitySet Name="Articles" EntityType="LightSwitchApplication.Article" />
     <EntitySet Name="ArticleTypes" EntityType="LightSwitchApplication.ArticleType" />
     <EntitySet Name="Authors" EntityType="LightSwitchApplication.Author" />
     <EntitySet Name="Results" EntityType="LightSwitchApplication.Result" />
+    <EntitySet Name="StudyDesigns" EntityType="LightSwitchApplication.StudyDesign" />
+    <EntitySet Name="StudyTargets" EntityType="LightSwitchApplication.StudyTarget" />
+    <EntitySet Name="TargetTypes" EntityType="LightSwitchApplication.TargetType" />
     <AssociationSet Name="Result_Article" Association="LightSwitchApplication.Result_Article">
       <End Role="Article" EntitySet="Articles" />
       <End Role="Result" EntitySet="Results" />
@@ -106,9 +175,17 @@
       <End Role="Article" EntitySet="Articles" />
       <End Role="Author" EntitySet="Authors" />
     </AssociationSet>
+    <AssociationSet Name="StudyTarget_Article" Association="LightSwitchApplication.StudyTarget_Article">
+      <End Role="Article" EntitySet="Articles" />
+      <End Role="StudyTarget" EntitySet="StudyTargets" />
+    </AssociationSet>
     <AssociationSet Name="Article_ArticleType" Association="LightSwitchApplication.Article_ArticleType">
       <End Role="ArticleType" EntitySet="ArticleTypes" />
       <End Role="Article" EntitySet="Articles" />
+    </AssociationSet>
+    <AssociationSet Name="StudyTarget_TargetType" Association="LightSwitchApplication.StudyTarget_TargetType">
+      <End Role="TargetType" EntitySet="TargetTypes" />
+      <End Role="StudyTarget" EntitySet="StudyTargets" />
     </AssociationSet>
   </EntityContainer>
 </Schema>
